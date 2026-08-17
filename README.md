@@ -1,2 +1,2 @@
 # hakanecavus.github.io
-Personel Website
+Personal Website
