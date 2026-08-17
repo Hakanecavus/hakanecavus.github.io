@@ -4,22 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hakan Emre Çavuş — Computer Engineer, Full Stack Developer & Software Engineer">
-    <title>Hakan Emre Çavuş | Software Engineer</title>
+    <meta name="description"
+        content="Hakan Emre Çavuş — Technical IT Leader & Senior Full Stack Engineer. Enterprise Software, Smart Manufacturing, SAP B1, SaaS & AI.">
+    <title>Hakan Emre Çavuş | Technical IT Leader & Senior Full-Stack Engineer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
-            --bg: #070b14;
-            --bg-soft: #0d1320;
-            --card: rgba(16, 24, 40, .72);
-            --border: rgba(148, 163, 184, .14);
-            --text: #f8fafc;
-            --muted: #94a3b8;
-            --primary: #60a5fa;
-            --secondary: #a78bfa;
-            --accent: #22d3ee;
-            --success: #34d399;
-            --max: 1120px;
+            --bg-page: #f8f9fc;
+            --bg-card: #ffffff;
+            --border-light: #e2e8f0;
+            --border-hover: #10b981;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --primary-green: #10b981;
+            --primary-green-dark: #059669;
+            --font-main: 'Plus Jakarta Sans', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --max-width: 1200px;
         }
 
         * {
@@ -33,14 +40,15 @@
         }
 
         body {
-            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background:
-                radial-gradient(circle at 15% 10%, rgba(96, 165, 250, .13), transparent 28%),
-                radial-gradient(circle at 85% 20%, rgba(167, 139, 250, .11), transparent 30%),
-                var(--bg);
-            color: var(--text);
-            line-height: 1.7;
+            font-family: var(--font-main);
+            background-color: var(--bg-page);
+            color: var(--text-dark);
+            line-height: 1.65;
             overflow-x: hidden;
+            background-image:
+                radial-gradient(circle at 10% 12%, rgba(254, 205, 211, 0.45), transparent 35%),
+                radial-gradient(circle at 88% 18%, rgba(167, 243, 208, 0.35), transparent 30%),
+                radial-gradient(circle at 85% 78%, rgba(233, 213, 255, 0.45), transparent 40%);
         }
 
         a {
@@ -49,7 +57,7 @@
         }
 
         .container {
-            width: min(var(--max), calc(100% - 40px));
+            width: min(var(--max-width), calc(100% - 48px));
             margin: auto;
         }
 
@@ -57,38 +65,118 @@
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: 20;
-            backdrop-filter: blur(18px);
-            background: rgba(7, 11, 20, .68);
-            border-bottom: 1px solid rgba(148, 163, 184, .08);
+            z-index: 100;
+            background: rgba(248, 249, 252, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
         }
 
         .nav-inner {
-            height: 72px;
+            height: 82px;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
-        .logo {
+        .sewood-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-weight: 800;
-            letter-spacing: -.04em;
             font-size: 1.2rem;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
         }
 
-        .logo span {
-            color: var(--primary);
+        .brand-icon-circle {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--text-dark);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .brand-icon-circle::after {
+            content: "";
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary-green);
+            border: 2px solid var(--bg-page);
         }
 
         .nav-links {
             display: flex;
-            gap: 26px;
-            color: var(--muted);
-            font-size: .92rem;
+            align-items: center;
+            gap: 32px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-muted);
         }
 
-        .nav-links a:hover {
-            color: white;
+        .nav-links a:not(.btn-download-cv):hover {
+            color: var(--text-dark);
+        }
+
+        .btn-download-cv {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 24px;
+            border-radius: 999px;
+            background: var(--text-dark);
+            color: #ffffff !important;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.15);
+        }
+
+        .btn-download-cv:hover {
+            background: var(--primary-green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 26px;
+            height: 18px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        .mobile-menu-toggle span {
+            width: 100%;
+            height: 2px;
+            background-color: var(--text-dark);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .mobile-menu-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
         }
 
         section {
@@ -96,411 +184,955 @@
         }
 
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 130px;
+            padding-top: 140px;
+            padding-bottom: 70px;
             position: relative;
         }
 
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.25fr .75fr;
-            gap: 70px;
+        .hero-layout {
+            position: relative;
+            display: flex;
+            flex-direction: column;
             align-items: center;
         }
 
-        .eyebrow {
-            display: inline-flex;
+        .left-social-bar {
+            position: absolute;
+            left: 0;
+            top: 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 10;
+        }
+
+        .social-icon-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            display: flex;
             align-items: center;
-            gap: 9px;
-            padding: 7px 12px;
-            border: 1px solid rgba(96, 165, 250, .22);
-            border-radius: 999px;
-            background: rgba(96, 165, 250, .07);
-            color: #bfdbfe;
-            font-size: .82rem;
+            justify-content: center;
+            color: var(--text-dark);
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .social-icon-btn:hover {
+            border-color: var(--primary-green);
+            color: var(--primary-green);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
+        }
+
+        .hero-portrait-wrapper {
+            position: relative;
+            width: 360px;
+            height: 420px;
             margin-bottom: 24px;
         }
 
-        .eyebrow::before {
-            content: "";
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--success);
-            box-shadow: 0 0 14px var(--success);
-        }
-
-        h1 {
-            font-size: clamp(3.2rem, 7vw, 6.3rem);
-            line-height: .98;
-            letter-spacing: -.065em;
-            margin-bottom: 25px;
-        }
-
-        .gradient {
-            background: linear-gradient(110deg, #fff, #93c5fd 45%, #c4b5fd);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .hero p {
-            max-width: 680px;
-            color: var(--muted);
-            font-size: 1.12rem;
-            margin-bottom: 32px;
-        }
-
-        .buttons {
+        .portrait-arch-frame {
+            width: 100%;
+            height: 100%;
+            border-radius: 180px 180px 40px 40px;
+            background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 100%);
+            border: 4px solid #ffffff;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+            overflow: hidden;
+            position: relative;
             display: flex;
-            gap: 13px;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .portrait-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .portrait-avatar-svg {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+        }
+
+        .floating-talk-badge {
+            position: absolute;
+            top: 20px;
+            right: -50px;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 999px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .talk-badge-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary-green);
+            box-shadow: 0 0 10px var(--primary-green);
+        }
+
+        .talk-badge-text {
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .sewood-hero-title {
+            font-size: clamp(3.4rem, 7.8vw, 6.2rem);
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .sewood-hero-subtitle {
+            font-size: 1.05rem;
+            font-weight: 800;
+            letter-spacing: 0.28em;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .hero-btn-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
             flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 60px;
         }
 
         .btn {
-            padding: 12px 18px;
-            border-radius: 11px;
-            border: 1px solid var(--border);
-            transition: .2s ease;
-            font-weight: 650;
-            font-size: .92rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
         }
 
-        .btn-primary {
-            background: white;
-            color: #07101f;
-            border-color: white;
+        .btn-green-fill {
+            background: var(--primary-green);
+            color: #ffffff;
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.25);
         }
 
-        .btn-secondary {
-            background: rgba(255, 255, 255, .035);
-            color: #dbeafe;
+        .btn-green-fill:hover {
+            background: var(--primary-green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.35);
         }
 
-        .btn:hover {
+        .btn-outline-dark {
+            background: #ffffff;
+            border-color: var(--border-light);
+            color: var(--text-dark);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+        }
+
+        .btn-outline-dark:hover {
+            border-color: var(--text-dark);
             transform: translateY(-2px);
         }
 
-        .hero-card {
-            min-height: 400px;
-            border: 1px solid var(--border);
-            border-radius: 28px;
-            padding: 30px;
-            background:
-                linear-gradient(145deg, rgba(96, 165, 250, .11), rgba(167, 139, 250, .05)),
-                var(--card);
-            box-shadow: 0 30px 80px rgba(0, 0, 0, .3);
-            position: relative;
-            overflow: hidden;
+        .brand-logos-strip {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 24px 30px;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 999px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
-        .hero-card::before {
-            content: "</>";
-            position: absolute;
-            right: 20px;
-            bottom: -25px;
-            font-size: 12rem;
-            font-weight: 900;
-            color: rgba(255, 255, 255, .025);
-        }
-
-        .code {
-            color: #cbd5e1;
-            font-family: "SFMono-Regular", Consolas, monospace;
-            font-size: .9rem;
-        }
-
-        .code .blue {
-            color: #60a5fa;
-        }
-
-        .code .purple {
-            color: #c084fc;
-        }
-
-        .code .green {
-            color: #86efac;
-        }
-
-        .code .gray {
-            color: #64748b;
-        }
-
-        .section-title {
-            margin-bottom: 42px;
-        }
-
-        .section-title .small {
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: .16em;
-            font-size: .75rem;
+        .brand-logo-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             font-weight: 800;
+            font-size: 1.05rem;
+            color: #475569;
+            font-family: var(--font-mono);
         }
 
-        .section-title h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            letter-spacing: -.045em;
-            margin-top: 7px;
+        .brand-logo-item span.dot-accent {
+            color: var(--primary-green);
         }
 
-        .section-title p {
-            color: var(--muted);
-            max-width: 700px;
-            margin-top: 10px;
+        .section-header {
+            margin-bottom: 45px;
+            text-align: center;
+        }
+
+        .section-tag {
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            color: var(--primary-green-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            margin-bottom: 8px;
+            display: block;
+            font-weight: 700;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 900;
+            letter-spacing: -0.035em;
+            color: var(--text-dark);
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 660px;
+            margin: 12px auto 0;
+            font-size: 1.05rem;
+        }
+
+        .sewood-light-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 26px;
+            padding: 36px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .sewood-light-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07);
+            border-color: var(--border-hover);
         }
 
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 22px;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 28px;
         }
 
-        .card {
-            background: var(--card);
-            border: 1px solid var(--border);
+        .about-bio h3 {
+            font-size: 1.45rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .about-bio p {
+            color: var(--text-muted);
+            font-size: 1.04rem;
+            margin-bottom: 20px;
+        }
+
+        .cv-download-banner {
+            margin-top: 32px;
+            padding: 26px;
             border-radius: 20px;
-            padding: 28px;
+            background: linear-gradient(135deg, #ecfdf5 0%, #eff6ff 100%);
+            border: 1.5px solid rgba(16, 185, 129, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
-        .card h3 {
+        .cv-banner-text h4 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+            color: var(--text-dark);
+        }
+
+        .cv-banner-text p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .tech-categories {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .tech-cat-card {
+            padding: 28px;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02);
+        }
+
+        .tech-cat-title {
+            font-size: 0.88rem;
+            font-family: var(--font-mono);
+            color: var(--primary-green-dark);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-weight: 700;
+        }
+
+        .tech-pill-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-pill {
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            color: #334155;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        .filter-bar {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            border-radius: 999px;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .filter-btn:hover {
+            color: var(--text-dark);
+            border-color: #cbd5e1;
+        }
+
+        .filter-btn.active {
+            background: var(--text-dark);
+            color: #ffffff;
+            border-color: var(--text-dark);
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.2);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .sewood-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 28px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .sewood-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary-green);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.09);
+        }
+
+        .card-cover {
+            height: 220px;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .cover-icon-wrapper {
+            width: 72px;
+            height: 72px;
+            border-radius: 22px;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cover-icon {
+            font-size: 2.2rem;
+        }
+
+        .card-tag-badge {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            border: 1px solid var(--border-light);
+            color: var(--text-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            font-family: var(--font-mono);
+        }
+
+        .card-body {
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             margin-bottom: 12px;
         }
 
-        .card p {
-            color: var(--muted);
+        .card-header h3 {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--text-dark);
         }
 
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
+        .card-visual-pill {
+            font-size: 0.75rem;
+            font-family: var(--font-mono);
+            color: var(--primary-green-dark);
+            background: #ecfdf5;
+            padding: 4px 11px;
+            border-radius: 8px;
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            font-weight: 700;
         }
 
-        .stat {
-            padding: 20px;
-            border-radius: 16px;
-            background: rgba(255, 255, 255, .025);
-            border: 1px solid var(--border);
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 22px;
+            line-height: 1.65;
+            flex-grow: 1;
         }
 
-        .stat strong {
-            display: block;
-            font-size: 1.7rem;
-            letter-spacing: -.04em;
-        }
-
-        .stat span {
-            color: var(--muted);
-            font-size: .85rem;
-        }
-
-        .skills {
+        .card-tech-stack {
             display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .card-tech-stack span {
+            padding: 5px 12px;
+            border-radius: 8px;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            color: #475569;
+            font-size: 0.78rem;
+            font-family: var(--font-mono);
+            font-weight: 600;
+        }
+
+        .card-action {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 18px;
+            border-top: 1px solid var(--border-light);
+            color: var(--text-dark);
+            font-weight: 800;
+            font-size: 0.92rem;
+            transition: color 0.2s ease;
+        }
+
+        .sewood-card:hover .card-action {
+            color: var(--primary-green-dark);
+        }
+
+        .timeline-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .timeline-card {
+            padding: 34px;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+        }
+
+        .timeline-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
             flex-wrap: wrap;
             gap: 10px;
         }
 
-        .skill {
-            padding: 9px 13px;
-            border: 1px solid var(--border);
-            background: rgba(255, 255, 255, .025);
-            border-radius: 9px;
-            color: #cbd5e1;
-            font-size: .88rem;
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-        }
-
-        .project {
-            position: relative;
-            overflow: hidden;
-            min-height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            background: linear-gradient(145deg, rgba(30, 41, 59, .8), rgba(15, 23, 42, .75));
-        }
-
-        .project::before {
-            content: "";
-            position: absolute;
-            width: 240px;
-            height: 240px;
-            border-radius: 50%;
-            top: -100px;
-            right: -70px;
-            background: radial-gradient(circle, rgba(96, 165, 250, .22), transparent 65%);
-        }
-
-        .project-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .project-tag {
-            display: inline-block;
-            color: #bfdbfe;
-            font-size: .72rem;
-            text-transform: uppercase;
-            letter-spacing: .1em;
-            margin-bottom: 9px;
-        }
-
-        .project h3 {
+        .timeline-role h3 {
             font-size: 1.35rem;
-            margin-bottom: 8px;
-        }
-
-        .project p {
-            color: var(--muted);
-            font-size: .9rem;
-        }
-
-        .project-tech {
-            display: flex;
-            gap: 7px;
-            flex-wrap: wrap;
-            margin-top: 17px;
-        }
-
-        .project-tech span {
-            padding: 4px 8px;
-            background: rgba(255, 255, 255, .05);
-            border-radius: 6px;
-            color: #94a3b8;
-            font-size: .72rem;
-        }
-
-        .timeline {
-            border-left: 1px solid rgba(148, 163, 184, .18);
-            margin-left: 8px;
-        }
-
-        .timeline-item {
-            padding: 0 0 42px 32px;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: -5px;
-            top: 7px;
-            width: 9px;
-            height: 9px;
-            border-radius: 50%;
-            background: var(--primary);
-            box-shadow: 0 0 18px rgba(96, 165, 250, .65);
-        }
-
-        .timeline-date {
-            color: var(--primary);
-            font-size: .78rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .timeline h3 {
-            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--text-dark);
         }
 
         .timeline-company {
-            color: #cbd5e1;
-            margin-bottom: 7px;
+            color: var(--primary-green-dark);
+            font-weight: 700;
+            font-size: 0.98rem;
         }
 
-        .timeline p {
-            color: var(--muted);
-            max-width: 750px;
+        .timeline-date {
+            font-family: var(--font-mono);
+            font-size: 0.84rem;
+            padding: 6px 16px;
+            border-radius: 999px;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            color: var(--text-muted);
+            font-weight: 600;
         }
 
-        .contact {
+        .timeline-desc {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+
+        .contact-card {
             text-align: center;
-            padding-bottom: 80px;
+            padding: 80px 40px;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 36px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.04);
         }
 
-        .contact-box {
-            max-width: 820px;
-            margin: auto;
-            padding: 60px 30px;
-            border-radius: 28px;
-            border: 1px solid var(--border);
-            background:
-                radial-gradient(circle at 50% 0%, rgba(96, 165, 250, .14), transparent 50%),
-                var(--card);
+        .contact-card h2 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            margin-bottom: 18px;
+            color: var(--text-dark);
         }
 
-        .contact-box h2 {
-            font-size: clamp(2.1rem, 5vw, 3.7rem);
-            letter-spacing: -.05em;
-            margin-bottom: 15px;
-        }
-
-        .contact-box p {
-            color: var(--muted);
-            margin: auto auto 28px;
-            max-width: 570px;
+        .contact-card p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: auto auto 38px;
+            font-size: 1.1rem;
         }
 
         footer {
-            border-top: 1px solid var(--border);
-            padding: 25px 0;
-            color: #64748b;
-            font-size: .82rem;
+            border-top: 1px solid var(--border-light);
+            padding: 32px 0;
+            color: var(--text-muted);
+            font-size: 0.88rem;
         }
 
         .footer-inner {
             display: flex;
             justify-content: space-between;
-            gap: 15px;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
-        @media (max-width: 850px) {
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+        }
+
+        .modal-container {
+            position: relative;
+            z-index: 1001;
+            width: min(920px, 95vw);
+            max-height: 90vh;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 28px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+            overflow-y: auto;
+            transform: scale(0.95) translateY(12px);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal.active .modal-container {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-header {
+            padding: 26px 32px;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            background: #ffffff;
+            z-index: 10;
+        }
+
+        .modal-title-group h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+            color: var(--text-dark);
+        }
+
+        .modal-title-group .modal-tag {
+            font-size: 0.78rem;
+            font-family: var(--font-mono);
+            color: var(--primary-green-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-weight: 700;
+        }
+
+        .modal-close {
+            background: #f1f5f9;
+            border: 1px solid var(--border-light);
+            color: var(--text-dark);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .modal-close:hover {
+            background: var(--text-dark);
+            color: #ffffff;
+        }
+
+        .modal-body {
+            padding: 32px;
+        }
+
+        .modal-gallery-wrapper {
+            margin-bottom: 32px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            background: #f8fafc;
+        }
+
+        .gallery-placeholder {
+            padding: 50px 24px;
+            text-align: center;
+        }
+
+        .placeholder-icon-large {
+            font-size: 3.2rem;
+            margin-bottom: 16px;
+        }
+
+        .gallery-placeholder h4 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .gallery-placeholder p {
+            color: var(--text-muted);
+            font-size: 0.94rem;
+            max-width: 520px;
+            margin: auto auto 20px;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            min-height: 350px;
+            max-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+        }
+
+        .carousel-slide {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-img {
+            max-width: 100%;
+            max-height: 480px;
+            object-fit: contain;
+            cursor: zoom-in;
+            border-radius: 8px;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 2;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .carousel-btn:hover {
+            background: var(--text-dark);
+            color: #ffffff;
+        }
+
+        .carousel-btn.prev {
+            left: 16px;
+        }
+
+        .carousel-btn.next {
+            right: 16px;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 16px;
+            display: flex;
+            gap: 8px;
+            z-index: 2;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(15, 23, 42, 0.25);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .dot.active {
+            background: var(--text-dark);
+            width: 26px;
+            border-radius: 10px;
+        }
+
+        .carousel-counter {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #ffffff;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-family: var(--font-mono);
+            color: var(--text-muted);
+            border: 1px solid var(--border-light);
+        }
+
+        .modal-section-title {
+            font-size: 0.84rem;
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--primary-green-dark);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .modal-description {
+            color: #334155;
+            font-size: 1.04rem;
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        .modal-features-list {
+            list-style: none;
+            margin-bottom: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .modal-features-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            background: #f8fafc;
+            padding: 12px 18px;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+        }
+
+        .modal-tech-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+
+        .skill-pill {
+            padding: 7px 16px;
+            background: #ecfdf5;
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            color: var(--primary-green-dark);
+            border-radius: 999px;
+            font-size: 0.86rem;
+            font-family: var(--font-mono);
+            font-weight: 700;
+        }
+
+        .modal-footer-links {
+            display: flex;
+            gap: 14px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        @media (max-width: 960px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
             .nav-links {
+                position: fixed;
+                top: 82px;
+                right: -100%;
+                width: 290px;
+                height: calc(100vh - 82px);
+                background: #ffffff;
+                border-left: 1px solid var(--border-light);
+                flex-direction: column;
+                padding: 40px 30px;
+                gap: 22px;
+                align-items: flex-start;
+                transition: right 0.3s ease;
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.08);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .left-social-bar {
                 display: none;
             }
 
-            .hero-grid,
             .about-grid,
-            .projects {
+            .projects-grid,
+            .tech-categories {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 540px) {
+            section {
+                padding: 80px 0;
             }
 
             .hero {
                 padding-top: 120px;
             }
 
-            .hero-card {
-                min-height: 330px;
-            }
-        }
-
-        @media (max-width: 520px) {
-            .container {
-                width: min(var(--max), calc(100% - 26px));
+            .hero-portrait-wrapper {
+                width: 280px;
+                height: 330px;
             }
 
-            section {
-                padding: 80px 0;
+            .floating-talk-badge {
+                right: -10px;
+                top: 10px;
             }
 
-            h1 {
-                font-size: 3.25rem;
+            .modal-body {
+                padding: 20px 16px;
             }
 
-            .stats {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .footer-inner {
+            .cv-download-banner {
                 flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .brand-logos-strip {
+                border-radius: 24px;
+                padding: 18px;
+                justify-content: center;
             }
         }
     </style>
@@ -510,13 +1142,32 @@
 
     <nav class="nav">
         <div class="container nav-inner">
-            <a href="#home" class="logo">HEC<span>.</span></a>
-            <div class="nav-links">
+            <a href="#home" class="sewood-brand">
+                <div class="brand-icon-circle">H</div>
+                <span>Hakan Emre Çavuş</span>
+            </a>
+
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menüyü Aç/Kapat">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="nav-links">
                 <a href="#about">Hakkımda</a>
                 <a href="#skills">Teknolojiler</a>
                 <a href="#projects">Projeler</a>
                 <a href="#experience">Deneyim</a>
                 <a href="#contact">İletişim</a>
+                <a href="assets/cv/Hakan_Emre_Cavus_CV.pdf" download class="btn-download-cv">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    CV 📄
+                </a>
             </div>
         </div>
     </nav>
@@ -524,95 +1175,128 @@
     <main>
 
         <section class="hero" id="home">
-            <div class="container hero-grid">
-                <div>
-                    <div class="eyebrow">Software Engineer · Full Stack Developer</div>
+            <div class="container hero-layout">
 
-                    <h1>
-                        Fikirleri<br>
-                        <span class="gradient">ürünlere</span><br>
-                        dönüştürüyorum.
-                    </h1>
+                <div class="left-social-bar">
+                    <a href="https://github.com/Hakanecavus" target="_blank" class="social-icon-btn"
+                        aria-label="GitHub">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/hakanecavus/" target="_blank" class="social-icon-btn"
+                        aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.75a1.45 1.45 0 1 0 0 2.9 1.45 1.45 0 0 0 0-2.9z" />
+                        </svg>
+                    </a>
+                    <a href="mailto:hakanemrecavus@gmail.com" class="social-icon-btn" aria-label="Email">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
 
-                    <p>
-                        Technical IT Lead ve Senior Full-Stack Engineer olarak;
-                        kurumsal yazılımlar, Smart Manufacturing, ERP/SAP entegrasyonları
-                        ve modern SaaS ürünleri geliştiriyorum. Karmaşık iş süreçlerini
-                        sade, ölçeklenebilir ve kullanılabilir yazılımlara dönüştürmeyi seviyorum.
-                    </p>
+                <div class="hero-portrait-wrapper">
+                    <div class="portrait-arch-frame">
+                        <img src="assets/profile/hec.jpeg" alt="Hakan Emre Çavuş" class="portrait-img"
+                            id="portrait-user-img"
+                            onerror="this.style.display='none'; document.getElementById('portrait-svg-fallback').style.display='block';">
+                        <svg class="portrait-avatar-svg" id="portrait-svg-fallback" viewBox="0 0 200 220" fill="none"
+                            style="display: none;">
+                            <circle cx="100" cy="75" r="45" fill="#334155" />
+                            <path d="M30 200 C30 140, 60 130, 100 130 C140 130, 170 140, 170 200 Z" fill="#1e293b" />
+                            <rect x="72" y="68" width="22" height="14" rx="3" stroke="#60a5fa" stroke-width="3"
+                                fill="none" />
+                            <rect x="106" y="68" width="22" height="14" rx="3" stroke="#60a5fa" stroke-width="3"
+                                fill="none" />
+                            <line x1="94" y1="74" x2="106" y2="74" stroke="#60a5fa" stroke-width="3" />
+                        </svg>
+                    </div>
 
-                    <div class="buttons">
-                        <a class="btn btn-primary" href="#projects">Projelerimi Gör</a>
-                        <a class="btn btn-secondary" href="#contact">Benimle İletişime Geç</a>
+                    <div class="floating-talk-badge">
+                        <span class="talk-badge-dot"></span>
+                        <span class="talk-badge-text">HAYDİ İLETİŞİME GEÇELİM..</span>
                     </div>
                 </div>
 
-                <div class="hero-card">
-                    <div class="code">
-                        <div><span class="gray">// about-me.ts</span></div><br>
-                        <div><span class="purple">const</span> developer = {</div>
-                        <div>&nbsp;&nbsp;name: <span class="green">"Hakan Emre Çavuş"</span>,</div>
-                        <div>&nbsp;&nbsp;role: <span class="green">"Software Engineer"</span>,</div>
-                        <div>&nbsp;&nbsp;focus: [</div>
-                        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">"Full Stack"</span>,</div>
-                        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">"Enterprise Software"</span>,</div>
-                        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">"SaaS"</span>,</div>
-                        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">"AI"</span></div>
-                        <div>&nbsp;&nbsp;],</div>
-                        <div>&nbsp;&nbsp;stack: {</div>
-                        <div>&nbsp;&nbsp;&nbsp;&nbsp;backend: <span class="green">"C# / Java"</span>,</div>
-                        <div>&nbsp;&nbsp;&nbsp;&nbsp;frontend: <span class="green">"Angular / TypeScript"</span>,</div>
-                        <div>&nbsp;&nbsp;&nbsp;&nbsp;database: <span class="green">"MS SQL / HANA"</span></div>
-                        <div>&nbsp;&nbsp;},</div>
-                        <div>&nbsp;&nbsp;mindset: <span class="green">"Build useful things."</span></div>
-                        <div>};</div>
-                    </div>
+                <h1 class="sewood-hero-title">Hakan Emre Çavuş</h1>
+                <div class="sewood-hero-subtitle">TECHNICAL IT LEADER / SENIOR FULL-STACK ENGINEER</div>
+
+                <div class="hero-btn-row">
+                    <a class="btn btn-green-fill" href="#projects">
+                        Projelerimi Gör ↘
+                    </a>
+                    <a class="btn btn-outline-dark" href="assets/cv/Hakan_Emre_Cavus_CV.pdf" download>
+                        CV (PDF) 📄
+                    </a>
+                    <a class="btn btn-outline-dark" href="#contact">
+                        İletişime Geç ✉
+                    </a>
                 </div>
+
+                <div class="brand-logos-strip">
+                    <div class="brand-logo-item"><span class="dot-accent">●</span> 5+ Yıl Deneyim</div>
+                    <div class="brand-logo-item"><span class="dot-accent">●</span> C# .NET Core</div>
+                    <div class="brand-logo-item"><span class="dot-accent">●</span> Angular</div>
+                    <div class="brand-logo-item"><span class="dot-accent">●</span> AI / LLM</div>
+                    <div class="brand-logo-item"><span class="dot-accent">●</span> Java Spring</div>
+                    <div class="brand-logo-item"><span class="dot-accent">●</span> SAP B1</div>
+                    <div class="brand-logo-item"><span class="dot-accent">●</span> Flutter</div>
+                </div>
+
             </div>
         </section>
 
         <section id="about">
             <div class="container">
-                <div class="section-title">
-                    <div class="small">01 / About</div>
-                    <h2>Hakkımda</h2>
-                    <p>Teknoloji, ürün geliştirme ve gerçek iş problemlerini çözme kesişiminde çalışıyorum.</p>
+                <div class="section-header">
+                    <span class="section-tag">// 01. ABOUT ME</span>
+                    <h2>Mühendislik & Ürün Yönetimi</h2>
+                    <p>Teknoloji, iş stratejisi ve kullanıcı deneyiminin kesiştiği noktada ölçeklenebilir çözümler
+                        üretiyorum.</p>
                 </div>
 
                 <div class="about-grid">
-                    <div class="card">
-                        <h3>Ben kimim?</h3>
+                    <div class="sewood-light-card about-bio">
+                        <h3>Hakan Emre Çavuş Kimdir?</h3>
                         <p>
-                            5+ yıllık deneyime sahip Technical IT Lead ve Senior Full-Stack Engineer'ım.
-                            Üretim ve finans sektörlerinde ölçeklenebilir kurumsal sistemler,
-                            Smart Manufacturing ve dijital dönüşüm çözümleri geliştiriyorum.
+                            Technical IT Lead ve Senior Full-Stack Engineer olarak 5 yılı aşkın süredir üretim,
+                            finans ve kurumsal teknoloji alanlarında yüksek performanslı sistemler inşa ediyorum.
                         </p>
-                        <br>
                         <p>
                             .NET Core, C#, Java / Spring Boot, Angular, React.js ve SAP Business One
-                            entegrasyonlarında çalışıyor; otomasyon, ERP yönetişimi ve üretim
-                            sistemlerini iş hedefleriyle birleştiriyorum.
+                            entegrasyonlarıyla fabrika otomasyonundan SaaS ürünlerine kadar geniş bir yelpazede
+                            yazılımlar tasarladım.
                         </p>
+
+                        <div class="cv-download-banner">
+                            <div class="cv-banner-text">
+                                <h4>Hakan Emre Çavuş — Özgeçmiş (CV)</h4>
+                                <p>Detaylı kariyer ve teknik uzmanlık özetim için PDF CV'mi indirebilirsiniz.</p>
+                            </div>
+                            <a href="assets/cv/Hakan_Emre_Cavus_CV.pdf" download class="btn btn-green-fill">
+                                CV (PDF) 📄
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="card">
-                        <h3>Odak Alanlarım</h3>
-                        <div class="skills">
-                            <span class="skill">Full Stack Development</span>
-                            <span class="skill">Enterprise Software</span>
-                            <span class="skill">SaaS</span>
-                            <span class="skill">SAP Business One</span>
-                            <span class="skill">API & Integration</span>
-                            <span class="skill">AI Applications</span>
-                            <span class="skill">SQL & Data</span>
-                            <span class="skill">Product Development</span>
-                        </div>
-
-                        <div class="stats" style="margin-top:20px;">
-                            <div class="stat"><strong>5+</strong><span>Yıl profesyonel deneyim</span></div>
-                            <div class="stat"><strong>99.9%</strong><span>Enterprise uptime</span></div>
-                            <div class="stat"><strong>70%</strong><span>Software cost reduction</span></div>
-                            <div class="stat"><strong>98%</strong><span>Stock accuracy</span></div>
+                    <div class="sewood-light-card">
+                        <h3>Odaklandığım Uzmanlık Alanları</h3>
+                        <div class="tech-pill-group" style="margin-top: 20px;">
+                            <span class="tech-pill">Full Stack Architecture</span>
+                            <span class="tech-pill">Enterprise Software</span>
+                            <span class="tech-pill">Smart Manufacturing</span>
+                            <span class="tech-pill">SAP Business One & SDK</span>
+                            <span class="tech-pill">SaaS Product Design</span>
+                            <span class="tech-pill">AI & Agent Workflows</span>
+                            <span class="tech-pill">REST API Entegrasyonu</span>
+                            <span class="tech-pill">RFID Envanter Otomasyonu</span>
                         </div>
                     </div>
                 </div>
@@ -621,35 +1305,60 @@
 
         <section id="skills">
             <div class="container">
-                <div class="section-title">
-                    <div class="small">02 / Tech Stack</div>
+                <div class="section-header">
+                    <span class="section-tag">// 02. TECH STACK</span>
                     <h2>Kullandığım Teknolojiler</h2>
-                    <p>Projeye göre doğru teknolojiyi seçiyor, gerektiğinde farklı ekosistemleri bir araya getiriyorum.
-                    </p>
+                    <p>Güvenilir, yüksek performanslı ve modern araçlar ekosistemi.</p>
                 </div>
 
-                <div class="card">
-                    <div class="skills">
-                        <span class="skill">C#</span>
-                        <span class="skill">.NET Core</span>
-                        <span class="skill">Java</span>
-                        <span class="skill">Spring Boot</span>
-                        <span class="skill">Node.js</span>
-                        <span class="skill">Angular</span>
-                        <span class="skill">React.js</span>
-                        <span class="skill">Flutter</span>
-                        <span class="skill">RESTful APIs</span>
-                        <span class="skill">Entity Framework Core</span>
-                        <span class="skill">SAP Business One</span>
-                        <span class="skill">SAP SDK & Integration</span>
-                        <span class="skill">PostgreSQL</span>
-                        <span class="skill">MS SQL Server</span>
-                        <span class="skill">ERP Governance</span>
-                        <span class="skill">Manufacturing Systems</span>
-                        <span class="skill">Smart Manufacturing</span>
-                        <span class="skill">RFID Automation</span>
-                        <span class="skill">Process Automation</span>
-                        <span class="skill">Agile / Scrum</span>
+                <div class="tech-categories">
+                    <div class="tech-cat-card">
+                        <div class="tech-cat-title">Backend & Kurumsal</div>
+                        <div class="tech-pill-group">
+                            <span class="tech-pill">C#</span>
+                            <span class="tech-pill">.NET Core</span>
+                            <span class="tech-pill">Java</span>
+                            <span class="tech-pill">Spring Boot</span>
+                            <span class="tech-pill">Node.js</span>
+                            <span class="tech-pill">RESTful APIs</span>
+                            <span class="tech-pill">EF Core</span>
+                        </div>
+                    </div>
+
+                    <div class="tech-cat-card">
+                        <div class="tech-cat-title">Frontend & Mobil</div>
+                        <div class="tech-pill-group">
+                            <span class="tech-pill">Angular</span>
+                            <span class="tech-pill">React.js</span>
+                            <span class="tech-pill">TypeScript</span>
+                            <span class="tech-pill">Flutter</span>
+                            <span class="tech-pill">Dart</span>
+                            <span class="tech-pill">DevExtreme / DevExpress</span>
+                        </div>
+                    </div>
+
+                    <div class="tech-cat-card">
+                        <div class="tech-cat-title">ERP & Entegrasyon & Veri</div>
+                        <div class="tech-pill-group">
+                            <span class="tech-pill">SAP Business One</span>
+                            <span class="tech-pill">SAP SDK / REST API</span>
+                            <span class="tech-pill">MS SQL Server</span>
+                            <span class="tech-pill">PostgreSQL</span>
+                            <span class="tech-pill">SAP HANA</span>
+                            <span class="tech-pill">SQLite</span>
+                        </div>
+                    </div>
+
+                    <div class="tech-cat-card">
+                        <div class="tech-cat-title">Smart Manufacturing & AI</div>
+                        <div class="tech-pill-group">
+                            <span class="tech-pill">Smart Manufacturing</span>
+                            <span class="tech-pill">RFID Otomasyonu</span>
+                            <span class="tech-pill">LLM / AI Ajanları</span>
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">RAG Workflows</span>
+                            <span class="tech-pill">Agile / Scrum</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -657,227 +1366,120 @@
 
         <section id="projects">
             <div class="container">
-                <div class="section-title">
-                    <div class="small">03 / Selected Work</div>
-                    <h2>Projeler</h2>
-                    <p>Kurumsal sistemlerden SaaS ürünlerine, mobil uygulamalardan AI destekli analiz platformlarına
-                        uzanan çalışmalar.</p>
+                <div class="section-header">
+                    <span class="section-tag">// 03. SELECTED WORK</span>
+                    <h2>Seçilmiş Projeler</h2>
+                    <p>Kurumsal ERP portalından AI destekli analiz araçlarına kadar geliştirdiğim projeler. Detay ve
+                        görseller için kartlara tıklayın.</p>
                 </div>
 
-                <div class="projects">
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-filter="all">Tümü</button>
+                    <button class="filter-btn" data-filter="enterprise">Enterprise & ERP</button>
+                    <button class="filter-btn" data-filter="saas">SaaS</button>
+                    <button class="filter-btn" data-filter="ai">Yapay Zekâ (AI)</button>
+                    <button class="filter-btn" data-filter="mobile">Mobil</button>
+                </div>
 
-                    <article class="card project">
-                        <div class="project-content">
-                            <div class="project-tag">Enterprise · ERP</div>
-                            <h3>ALARA</h3>
-                            <p>
-                                SAP Business One ile entegre çalışan modern web uygulaması.
-                                Satış siparişleri, sevkiyat, stok transferleri, raporlama,
-                                kalite ve operasyon süreçlerini tek bir arayüzde yönetmeye odaklanıyor.
-                            </p>
-                            <div class="project-tech">
-                                <span>Angular</span><span>.NET</span><span>DevExtreme</span>
-                                <span>SAP B1</span><span>SQL Server</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card project">
-                        <div class="project-content">
-                            <div class="project-tag">Fintech · AI</div>
-                            <h3>StockAnalystAI</h3>
-                            <p>
-                                Borsa şirketlerini teknik ve finansal verilerle analiz eden,
-                                deterministik hesaplamaları yapay zekâ destekli yorumlama ile
-                                birleştiren kişisel yatırım araştırma platformu.
-                            </p>
-                            <div class="project-tech">
-                                <span>AI</span><span>Financial Analysis</span>
-                                <span>Technical Analysis</span><span>Backtesting</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card project">
-                        <div class="project-content">
-                            <div class="project-tag">Mobile · FinTech</div>
-                            <h3>Cüzdanım Mobile</h3>
-                            <p>
-                                Gelir ve gider akışlarını özel kategoriler ve yerel veritabanı
-                                entegrasyonuyla takip etmeyi sağlayan modern, minimalist finans uygulaması.
-                            </p>
-                            <div class="project-tech">
-                                <span>Flutter</span><span>Dart</span><span>Mobile UI/UX</span><span>Local DB</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card project">
-                        <div class="project-content">
-                            <div class="project-tag">SaaS · Mobility</div>
-                            <h3>Otopark Ödeme Platformu</h3>
-                            <p>
-                                Otoparklarda ödeme, plaka tanıma, kiosk ve mobil deneyimi
-                                bir araya getiren dijital ödeme altyapısı fikri.
-                                Belediyeler ve işletmeler için ölçeklenebilir bir platform hedefliyor.
-                            </p>
-                            <div class="project-tech">
-                                <span>SaaS</span><span>Payment</span><span>Computer Vision</span>
-                                <span>Mobile</span><span>Cloud</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card project">
-                        <div class="project-content">
-                            <div class="project-tag">B2B · Integration</div>
-                            <h3>ERZE_SAP</h3>
-                            <p>
-                                SAP REST API üzerinden çalışan, operasyonel süreçleri
-                                kolaylaştıran ve SAP kullanım maliyetlerini azaltmaya yardımcı
-                                olan özel iş uygulaması.
-                            </p>
-                            <div class="project-tech">
-                                <span>VB.NET</span><span>SAP REST API</span>
-                                <span>DevExpress</span><span>SQL</span><span>B2B</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card project">
-                        <div class="project-content">
-                            <div class="project-tag">SaaS · IT Operations</div>
-                            <h3>IT Asset Management Platform</h3>
-                            <p>
-                                Kurumların donanım ve yazılım varlıklarını merkezi olarak
-                                yönetmesini sağlayan IT Asset Management SaaS platformu.
-                                Varlık yaşam döngüsü, kullanıcı/cihaz ilişkileri, envanter,
-                                takip ve IT operasyon süreçlerini tek bir sistemde yönetmeye odaklanıyor.
-                            </p>
-                            <div class="project-tech">
-                                <span>ITAM</span><span>SaaS</span><span>Asset Management</span>
-                                <span>Enterprise</span><span>Automation</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card project">
-                        <div class="project-content">
-                            <div class="project-tag">Product · Web</div>
-                            <h3>Payroll SaaS</h3>
-                            <p>
-                                Bordro ve çalışan süreçlerini dijitalleştirmeye yönelik,
-                                Spring Boot ve Angular tabanlı SaaS uygulaması.
-                            </p>
-                            <div class="project-tech">
-                                <span>Spring Boot</span><span>Angular</span>
-                                <span>REST API</span><span>SaaS</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card project">
-                        <div class="project-content">
-                            <div class="project-tag">AI · Product</div>
-                            <h3>AI-Powered Products</h3>
-                            <p>
-                                LLM'leri yalnızca sohbet için değil; veri analizi, raporlama,
-                                karar destek ve otomasyon süreçlerinin bir parçası olarak
-                                kullanan yeni nesil ürün fikirleri.
-                            </p>
-                            <div class="project-tech">
-                                <span>LLM</span><span>Agents</span><span>Workflows</span>
-                                <span>Automation</span>
-                            </div>
-                        </div>
-                    </article>
-
+                <div class="projects-grid" id="projects-grid">
                 </div>
             </div>
         </section>
 
         <section id="experience">
             <div class="container">
-                <div class="section-title">
-                    <div class="small">04 / Experience</div>
-                    <h2>Deneyim</h2>
-                    <p>Kurumsal yazılım, entegrasyon ve ürün geliştirme ekseninde ilerleyen kariyer yolculuğum.</p>
+                <div class="section-header">
+                    <span class="section-tag">// 04. EXPERIENCE</span>
+                    <h2>Deneyim & Kariyer</h2>
+                    <p>Kurumsal liderlik ve yazılım mühendisliği yolculuğum.</p>
                 </div>
 
-                <div class="card">
-                    <div class="timeline">
+                <div class="timeline-list">
 
-                        <div class="timeline-item">
-                            <div class="timeline-date">07/2025 — Present</div>
-                            <h3>Technical IT Leader</h3>
-                            <div class="timeline-company">EplePlast Packaging · İzmir</div>
-                            <p>
-                                Smart Manufacturing ve kaynak optimizasyonu odaklı dijital dönüşüm
-                                yol haritasını yönettim. Üretim hatlarıyla entegre kurumsal uygulamalar
-                                geliştirerek %99.9 uptime sağladım; otomasyon ve sistem konsolidasyonu
-                                ile yazılım maliyetlerini %70 azalttım. RFID tabanlı envanter otomasyonu
-                                ile stok doğruluğunu %98'e çıkardım.
-                            </p>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-date">04/2024 — 07/2025</div>
-                            <h3>Senior Full-Stack Developer</h3>
-                            <div class="timeline-company">BilgeAdam Technology · Outsource – Garanti BBVA Technology
+                    <div class="timeline-card">
+                        <div class="timeline-top">
+                            <div class="timeline-role">
+                                <h3>Technical IT Leader</h3>
+                                <div class="timeline-company">EplePlast Packaging · İzmir</div>
                             </div>
-                            <p>
-                                7.000+ aktif kullanıcıyı destekleyen User Management System geliştirdim.
-                                Java Spring Boot servislerini güvenlik standartlarına uygun şekilde
-                                optimize ettim ve C# / Entity Framework Core optimizasyonları ile
-                                Asset Management modülünün response sürelerini %70 iyileştirdim.
-                            </p>
+                            <span class="timeline-date">07/2025 — Present</span>
                         </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-date">08/2022 — 10/2023</div>
-                            <h3>Full-Stack Developer</h3>
-                            <div class="timeline-company">Eropa · SAP Business One Solutions · İzmir</div>
-                            <p>
-                                Ekip verimliliğini %35 artıran task management platformu geliştirdim.
-                                Flutter ile gerçek zamanlı üretim verisi toplayan mobil SAP araçları
-                                geliştirdim ve optimize API mimarisiyle veri işleme sürelerini %50 azalttım.
-                            </p>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-date">08/2020 — 08/2022</div>
-                            <h3>Software Developer</h3>
-                            <div class="timeline-company">Erze Packaging · İzmir</div>
-                            <p>
-                                SAP REST API kullanan ERZE_SAP entegrasyon katmanını geliştirdim.
-                                Yüksek hacimli üretim süreçlerini özel .NET çözümleriyle otomatikleştirdim
-                                ve sistem optimizasyonu ile SAP lisans maliyetlerinde yıllık %50 düşüş sağladım.
-                            </p>
-                        </div>
-
+                        <p class="timeline-desc">
+                            Smart Manufacturing ve kaynak optimizasyonu odaklı dijital dönüşüm yol haritasını yönettim.
+                            Üretim hatlarıyla entegre kurumsal uygulamalar geliştirerek %99.9 uptime sağladım;
+                            otomasyon ve sistem konsolidasyonu ile yazılım maliyetlerini %70 azalttım.
+                            RFID tabanlı envanter otomasyonu ile stok doğruluğunu %98'e çıkardım.
+                        </p>
                     </div>
+
+                    <div class="timeline-card">
+                        <div class="timeline-top">
+                            <div class="timeline-role">
+                                <h3>Senior Full-Stack Developer</h3>
+                                <div class="timeline-company">BilgeAdam Technology · Outsource – Garanti BBVA Technology
+                                </div>
+                            </div>
+                            <span class="timeline-date">04/2024 — 07/2025</span>
+                        </div>
+                        <p class="timeline-desc">
+                            7.000+ aktif kullanıcıyı destekleyen User Management System geliştirdim.
+                            Java Spring Boot servislerini güvenlik standartlarına uygun şekilde optimize ettim ve
+                            C# / Entity Framework Core optimizasyonları ile Asset Management modülünün response
+                            sürelerini %70 iyileştirdim.
+                        </p>
+                    </div>
+
+                    <div class="timeline-card">
+                        <div class="timeline-top">
+                            <div class="timeline-role">
+                                <h3>Full-Stack Developer</h3>
+                                <div class="timeline-company">Eropa · SAP Business One Solutions · İzmir</div>
+                            </div>
+                            <span class="timeline-date">08/2022 — 10/2023</span>
+                        </div>
+                        <p class="timeline-desc">
+                            Ekip verimliliğini %35 artıran task management platformu geliştirdim.
+                            Flutter ile gerçek zamanlı üretim verisi toplayan mobil SAP araçları geliştirdim
+                            ve optimize API mimarisiyle veri işleme sürelerini %50 azalttım.
+                        </p>
+                    </div>
+
+                    <div class="timeline-card">
+                        <div class="timeline-top">
+                            <div class="timeline-role">
+                                <h3>Software Developer</h3>
+                                <div class="timeline-company">Erze Packaging · İzmir</div>
+                            </div>
+                            <span class="timeline-date">08/2020 — 08/2022</span>
+                        </div>
+                        <p class="timeline-desc">
+                            SAP REST API kullanan ERZE_SAP entegrasyon katmanını geliştirdim.
+                            Yüksek hacimli üretim süreçlerini özel .NET çözümleriyle otomatikleştirdim
+                            ve sistem optimizasyonu ile SAP lisans maliyetlerinde yıllık %50 düşüş sağladım.
+                        </p>
+                    </div>
+
                 </div>
-            </div>
             </div>
         </section>
 
-        <section class="contact" id="contact">
+        <section id="contact" style="padding-bottom: 90px;">
             <div class="container">
-                <div class="contact-box">
-                    <div class="section-title" style="margin-bottom:0;">
-                        <div class="small">05 / Contact</div>
-                        <h2>Bir fikir üzerinde<br><span class="gradient">birlikte çalışalım.</span></h2>
-                        <p>
-                            Yazılım geliştirme, ürün fikri, SaaS, AI veya kurumsal entegrasyon
-                            hakkında konuşmak istersen benimle iletişime geçebilirsin.
-                        </p>
-                        <div class="buttons" style="justify-content:center;">
-                            <!-- TODO: Bilgilerini buraya ekle -->
-                            <a class="btn btn-primary" href="mailto:hakanemrecavus@gmail.com">E-posta Gönder</a>
-                            <a class="btn btn-secondary" href="https://github.com/Hakanecavus"  target="_blank">GitHub</a>
-                            <a class="btn btn-secondary" href="https://www.linkedin.com/in/hakanecavus/"
-                                target="_blank">LinkedIn</a>
-                        </div>
+                <div class="contact-card">
+                    <span class="section-tag" style="margin-bottom: 12px;">// 05. CONTACT ME</span>
+                    <h2>Hakan Emre Çavuş ile<br>İletişime Geçin.</h2>
+                    <p>
+                        Yazılım geliştirme, kurumsal sistemler, SaaS ürünleri veya iş birliği fırsatları için doğrudan
+                        bana ulaşabilirsiniz.
+                    </p>
+                    <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+                        <a class="btn btn-green-fill" href="mailto:hakanemrecavus@gmail.com">E-posta Gönder ✉</a>
+                        <a class="btn btn-outline-dark" href="assets/cv/Hakan_Emre_Cavus_CV.pdf" download>
+                            CV (PDF) 📄
+                        </a>
+                        <a class="btn btn-outline-dark" href="https://github.com/Hakanecavus" target="_blank">GitHub</a>
+                        <a class="btn btn-outline-dark" href="https://www.linkedin.com/in/hakanecavus/"
+                            target="_blank">LinkedIn</a>
                     </div>
                 </div>
             </div>
@@ -891,6 +1493,46 @@
             <span>B.Sc. Computer Engineering · İzmir University of Economics · MÜDEK / Washington Accord</span>
         </div>
     </footer>
+
+    <div class="modal" id="project-modal" aria-hidden="true">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <span class="modal-tag" id="modal-tag">Kategori</span>
+                    <h3 id="modal-title">Proje Adı</h3>
+                </div>
+                <button class="modal-close" id="modal-close" aria-label="Pop-up Kapat">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-gallery-wrapper" id="modal-gallery-wrapper">
+                </div>
+
+                <div class="modal-section-title">Proje Hakkında</div>
+                <p class="modal-description" id="modal-desc">Detaylı açıklama...</p>
+
+                <div class="modal-section-title">Öne Çıkan Özellikler & Çözümler</div>
+                <ul class="modal-features-list" id="modal-features">
+                </ul>
+
+                <div class="modal-section-title">Kullanılan Teknolojiler & Araçlar</div>
+                <div class="modal-tech-pills" id="modal-tech">
+                </div>
+
+                <div class="modal-footer-links" id="modal-links">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="projects-data.js"></script>
+    <script src="main.js"></script>
 
 </body>
 
