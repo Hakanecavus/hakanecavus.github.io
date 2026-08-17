@@ -70,6 +70,30 @@ const PROJECTS_DATA = [
         }
     },
     {
+        id: "tiny-wins",
+        title: "Tiny Wins",
+        tag: "Mobile · Habit Tracker",
+        category: "mobile",
+        accentColor: "#f97316",
+        gradient: "linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)",
+        icon: "🔥",
+        summary: "Kişisel gelişim ve mikro alışkanlık yönetimini davranışsal motivasyon prensipleriyle harmanlayan Flutter tabanlı mobil uygulama.",
+        description: "Tiny Wins, kullanıcıların yeni alışkanlıklar edinme ve kişisel hedeflerini sürdürme süreçlerini oyunlaştırma (gamification) ve davranışsal psikoloji teknikleriyle destekleyen mobil bir uygulamadır. Günlük, haftalık ve aylık periyotlarda tanımlanan hedefler, renk kodlu kategori altyapısıyla görselleştirilir. Günlük hedeflerin tamamlanması durumunda tetiklenen dinamik seri (streak) algoritması ve etkileşimli başarı takvimi sayesinde kullanıcıların bağlılığı ve devamlılığı artırılır.",
+        features: [
+            "Periyodik alışkanlık mimarisi (Günlük, haftalık ve aylık hedef zamanlamaları)",
+            "Renk kodlu görsel kategori sistemi ve kişiselleştirilebilir takip kartları",
+            "Oyunlaştırılmış seri (Streak) algoritması ve etkileşimli başarı takvimi",
+            "Davranışsal motivasyon odaklı dinamik sürdürülebilirlik bildirimleri",
+            "Flutter altyapısı ile yüksek performanslı, reaktif ve sezgisel UI/UX deneyimi"
+        ],
+        tech: ["Flutter", "Dart", "Mobile UI/UX", "Habit Tracking", "Local DB", "State Management"],
+        images: [],
+        links: {
+            github: "",
+            demo: ""
+        }
+    },
+    {
         id: "otopark-odeme",
         title: "Akıllı Otopark Ödeme",
         tag: "SaaS · Mobility",
