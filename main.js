@@ -1,14 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
-    initProjects();
+    initLanguageSwitcher();
     initProjectFilter();
     initModal();
     initMobileNav();
-    initLanguageSwitcher();
 });
 
 let currentProject = null;
 let currentImageIndex = 0;
-let currentLang = localStorage.getItem('portfolio_lang') || 'tr';
+
+function detectInitialLanguage() {
+    const savedLang = localStorage.getItem('portfolio_lang');
+    if (savedLang === 'tr' || savedLang === 'en') {
+        return savedLang;
+    }
+
+    const browserLang = (
+        navigator.language ||
+        (navigator.languages && navigator.languages[0]) ||
+        navigator.userLanguage ||
+        ''
+    ).toLowerCase();
+
+    if (browserLang.startsWith('tr')) {
+        return 'tr';
+    }
+
+    return 'en';
+}
+
+let currentLang = detectInitialLanguage();
 
 const TRANSLATIONS = {
     tr: {
