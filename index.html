@@ -147,6 +147,44 @@
             box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
         }
 
+        .lang-switch-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 99px;
+            padding: 7px 13px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            font-family: var(--font-main);
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .lang-switch-btn:hover {
+            border-color: var(--primary-green);
+            color: var(--text-dark);
+            transform: translateY(-1px);
+        }
+
+        .lang-switch-btn .lang-option {
+            transition: color 0.2s ease;
+        }
+
+        .lang-switch-btn .lang-option.active {
+            color: var(--primary-green-dark);
+            font-weight: 800;
+        }
+
+        .lang-switch-btn .lang-divider {
+            color: var(--border-light);
+            font-weight: 400;
+        }
+
         .mobile-menu-toggle {
             display: none;
             flex-direction: column;
@@ -361,16 +399,16 @@
 
         .brand-logos-strip {
             width: 100%;
-            max-width: 900px;
+            max-width: 790px;
             display: flex;
             align-items: center;
-            justify-content: space-around;
-            padding: 24px 30px;
+            justify-content: center;
+            padding: 20px 24px;
             background: #ffffff;
             border: 1px solid var(--border-light);
             border-radius: 999px;
             box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
-            gap: 20px;
+            gap: 14px 20px;
             flex-wrap: wrap;
         }
 
@@ -379,9 +417,10 @@
             align-items: center;
             gap: 8px;
             font-weight: 800;
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: #475569;
             font-family: var(--font-mono);
+            white-space: nowrap;
         }
 
         .brand-logo-item span.dot-accent {
@@ -1154,11 +1193,11 @@
             </button>
 
             <div class="nav-links" id="nav-links">
-                <a href="#about">Hakkımda</a>
-                <a href="#skills">Teknolojiler</a>
-                <a href="#projects">Projeler</a>
-                <a href="#experience">Deneyim</a>
-                <a href="#contact">İletişim</a>
+                <a href="#about" data-i18n="nav_about">Hakkımda</a>
+                <a href="#skills" data-i18n="nav_skills">Teknolojiler</a>
+                <a href="#projects" data-i18n="nav_projects">Projeler</a>
+                <a href="#experience" data-i18n="nav_experience">Deneyim</a>
+                <a href="#contact" data-i18n="nav_contact">İletişim</a>
                 <a href="assets/cv/Hakan_Emre_Cavus_CV.pdf" download class="btn-download-cv">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2.2">
@@ -1166,8 +1205,13 @@
                         <polyline points="7 10 12 15 17 10"></polyline>
                         <line x1="12" y1="15" x2="12" y2="3"></line>
                     </svg>
-                    CV 📄
+                    <span data-i18n="nav_cv">CV 📄</span>
                 </a>
+                <button class="lang-switch-btn" id="lang-switch-btn" aria-label="Switch Language">
+                    <span class="lang-option lang-tr active">TR</span>
+                    <span class="lang-divider">/</span>
+                    <span class="lang-option lang-en">EN</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -1221,27 +1265,27 @@
 
                     <div class="floating-talk-badge">
                         <span class="talk-badge-dot"></span>
-                        <span class="talk-badge-text">HAYDİ İLETİŞİME GEÇELİM..</span>
+                        <span class="talk-badge-text" data-i18n="hero_talk_badge">HAYDİ İLETİŞİME GEÇELİM..</span>
                     </div>
                 </div>
 
                 <h1 class="sewood-hero-title">Hakan Emre Çavuş</h1>
-                <div class="sewood-hero-subtitle">TECHNICAL IT LEADER / SENIOR FULL-STACK ENGINEER</div>
+                <div class="sewood-hero-subtitle" data-i18n="hero_subtitle">TECHNICAL IT LEADER / SENIOR FULL-STACK ENGINEER</div>
 
                 <div class="hero-btn-row">
-                    <a class="btn btn-green-fill" href="#projects">
+                    <a class="btn btn-green-fill" href="#projects" data-i18n="hero_btn_projects">
                         Projelerimi Gör ↘
                     </a>
-                    <a class="btn btn-outline-dark" href="assets/cv/Hakan_Emre_Cavus_CV.pdf" download>
+                    <a class="btn btn-outline-dark" href="assets/cv/Hakan_Emre_Cavus_CV.pdf" download data-i18n="hero_btn_cv">
                         CV (PDF) 📄
                     </a>
-                    <a class="btn btn-outline-dark" href="#contact">
+                    <a class="btn btn-outline-dark" href="#contact" data-i18n="hero_btn_contact">
                         İletişime Geç ✉
                     </a>
                 </div>
 
                 <div class="brand-logos-strip">
-                    <div class="brand-logo-item"><span class="dot-accent">●</span> 5+ Yıl Deneyim</div>
+                    <div class="brand-logo-item"><span class="dot-accent">●</span> <span data-i18n="hero_strip_exp">6+ Yıl Deneyim</span></div>
                     <div class="brand-logo-item"><span class="dot-accent">●</span> C# .NET Core</div>
                     <div class="brand-logo-item"><span class="dot-accent">●</span> Angular</div>
                     <div class="brand-logo-item"><span class="dot-accent">●</span> AI / LLM</div>
@@ -1256,20 +1300,20 @@
         <section id="about">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">// 01. ABOUT ME</span>
-                    <h2>Mühendislik & Ürün Yönetimi</h2>
-                    <p>Teknoloji, iş stratejisi ve kullanıcı deneyiminin kesiştiği noktada ölçeklenebilir çözümler
+                    <span class="section-tag" data-i18n="about_tag">// 01. ABOUT ME</span>
+                    <h2 data-i18n="about_title">Mühendislik & Ürün Yönetimi</h2>
+                    <p data-i18n="about_subtitle">Teknoloji, iş stratejisi ve kullanıcı deneyiminin kesiştiği noktada ölçeklenebilir çözümler
                         üretiyorum.</p>
                 </div>
 
                 <div class="about-grid">
                     <div class="sewood-light-card about-bio">
-                        <h3>Hakan Emre Çavuş Kimdir?</h3>
-                        <p>
-                            Technical IT Lead ve Senior Full-Stack Engineer olarak 5 yılı aşkın süredir üretim,
+                        <h3 data-i18n="about_bio_title">Hakan Emre Çavuş Kimdir?</h3>
+                        <p data-i18n="about_bio_p1">
+                            Technical IT Lead ve Senior Full-Stack Engineer olarak 6 yılı aşkın süredir üretim,
                             finans ve kurumsal teknoloji alanlarında yüksek performanslı sistemler inşa ediyorum.
                         </p>
-                        <p>
+                        <p data-i18n="about_bio_p2">
                             .NET Core, C#, Java / Spring Boot, Angular, React.js ve SAP Business One
                             entegrasyonlarıyla fabrika otomasyonundan SaaS ürünlerine kadar geniş bir yelpazede
                             yazılımlar tasarladım.
@@ -1277,17 +1321,17 @@
 
                         <div class="cv-download-banner">
                             <div class="cv-banner-text">
-                                <h4>Hakan Emre Çavuş — Özgeçmiş (CV)</h4>
-                                <p>Detaylı kariyer ve teknik uzmanlık özetim için PDF CV'mi indirebilirsiniz.</p>
+                                <h4 data-i18n="about_cv_title">Hakan Emre Çavuş — Özgeçmiş (CV)</h4>
+                                <p data-i18n="about_cv_desc">Detaylı kariyer ve teknik uzmanlık özetim için PDF CV'mi indirebilirsiniz.</p>
                             </div>
-                            <a href="assets/cv/Hakan_Emre_Cavus_CV.pdf" download class="btn btn-green-fill">
+                            <a href="assets/cv/Hakan_Emre_Cavus_CV.pdf" download class="btn btn-green-fill" data-i18n="about_cv_btn">
                                 CV (PDF) 📄
                             </a>
                         </div>
                     </div>
 
                     <div class="sewood-light-card">
-                        <h3>Odaklandığım Uzmanlık Alanları</h3>
+                        <h3 data-i18n="about_focus_title">Odaklandığım Uzmanlık Alanları</h3>
                         <div class="tech-pill-group" style="margin-top: 20px;">
                             <span class="tech-pill">Full Stack Architecture</span>
                             <span class="tech-pill">Enterprise Software</span>
@@ -1295,8 +1339,8 @@
                             <span class="tech-pill">SAP Business One & SDK</span>
                             <span class="tech-pill">SaaS Product Design</span>
                             <span class="tech-pill">AI & Agent Workflows</span>
-                            <span class="tech-pill">REST API Entegrasyonu</span>
-                            <span class="tech-pill">RFID Envanter Otomasyonu</span>
+                            <span class="tech-pill" data-i18n="about_pill_rest">REST API Entegrasyonu</span>
+                            <span class="tech-pill" data-i18n="about_pill_rfid">RFID Envanter Otomasyonu</span>
                         </div>
                     </div>
                 </div>
@@ -1306,14 +1350,14 @@
         <section id="skills">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">// 02. TECH STACK</span>
-                    <h2>Kullandığım Teknolojiler</h2>
-                    <p>Güvenilir, yüksek performanslı ve modern araçlar ekosistemi.</p>
+                    <span class="section-tag" data-i18n="skills_tag">// 02. TECH STACK</span>
+                    <h2 data-i18n="skills_title">Kullandığım Teknolojiler</h2>
+                    <p data-i18n="skills_subtitle">Güvenilir, yüksek performanslı ve modern araçlar ekosistemi.</p>
                 </div>
 
                 <div class="tech-categories">
                     <div class="tech-cat-card">
-                        <div class="tech-cat-title">Backend & Kurumsal</div>
+                        <div class="tech-cat-title" data-i18n="skills_cat_backend">Backend & Kurumsal</div>
                         <div class="tech-pill-group">
                             <span class="tech-pill">C#</span>
                             <span class="tech-pill">.NET Core</span>
@@ -1326,7 +1370,7 @@
                     </div>
 
                     <div class="tech-cat-card">
-                        <div class="tech-cat-title">Frontend & Mobil</div>
+                        <div class="tech-cat-title" data-i18n="skills_cat_frontend">Frontend & Mobil</div>
                         <div class="tech-pill-group">
                             <span class="tech-pill">Angular</span>
                             <span class="tech-pill">React.js</span>
@@ -1338,7 +1382,7 @@
                     </div>
 
                     <div class="tech-cat-card">
-                        <div class="tech-cat-title">ERP & Entegrasyon & Veri</div>
+                        <div class="tech-cat-title" data-i18n="skills_cat_erp">ERP & Entegrasyon & Veri</div>
                         <div class="tech-pill-group">
                             <span class="tech-pill">SAP Business One</span>
                             <span class="tech-pill">SAP SDK / REST API</span>
@@ -1350,11 +1394,11 @@
                     </div>
 
                     <div class="tech-cat-card">
-                        <div class="tech-cat-title">Smart Manufacturing & AI</div>
+                        <div class="tech-cat-title" data-i18n="skills_cat_smart">Smart Manufacturing & AI</div>
                         <div class="tech-pill-group">
                             <span class="tech-pill">Smart Manufacturing</span>
-                            <span class="tech-pill">RFID Otomasyonu</span>
-                            <span class="tech-pill">LLM / AI Ajanları</span>
+                            <span class="tech-pill" data-i18n="skills_pill_rfid">RFID Otomasyonu</span>
+                            <span class="tech-pill" data-i18n="skills_pill_llm">LLM / AI Ajanları</span>
                             <span class="tech-pill">Python</span>
                             <span class="tech-pill">RAG Workflows</span>
                             <span class="tech-pill">Agile / Scrum</span>
@@ -1367,18 +1411,18 @@
         <section id="projects">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">// 03. SELECTED WORK</span>
-                    <h2>Seçilmiş Projeler</h2>
-                    <p>Kurumsal ERP portalından AI destekli analiz araçlarına kadar geliştirdiğim projeler. Detay ve
+                    <span class="section-tag" data-i18n="projects_tag">// 03. SELECTED WORK</span>
+                    <h2 data-i18n="projects_title">Seçilmiş Projeler</h2>
+                    <p data-i18n="projects_subtitle">Kurumsal ERP portalından AI destekli analiz araçlarına kadar geliştirdiğim projeler. Detay ve
                         görseller için kartlara tıklayın.</p>
                 </div>
 
                 <div class="filter-bar">
-                    <button class="filter-btn active" data-filter="all">Tümü</button>
-                    <button class="filter-btn" data-filter="enterprise">Enterprise & ERP</button>
-                    <button class="filter-btn" data-filter="saas">SaaS</button>
-                    <button class="filter-btn" data-filter="ai">Yapay Zekâ (AI)</button>
-                    <button class="filter-btn" data-filter="mobile">Mobil</button>
+                    <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Tümü</button>
+                    <button class="filter-btn" data-filter="enterprise" data-i18n="filter_enterprise">Enterprise & ERP</button>
+                    <button class="filter-btn" data-filter="saas" data-i18n="filter_saas">SaaS</button>
+                    <button class="filter-btn" data-filter="ai" data-i18n="filter_ai">Yapay Zekâ (AI)</button>
+                    <button class="filter-btn" data-filter="mobile" data-i18n="filter_mobile">Mobil</button>
                 </div>
 
                 <div class="projects-grid" id="projects-grid">
@@ -1389,9 +1433,9 @@
         <section id="experience">
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">// 04. EXPERIENCE</span>
-                    <h2>Deneyim & Kariyer</h2>
-                    <p>Kurumsal liderlik ve yazılım mühendisliği yolculuğum.</p>
+                    <span class="section-tag" data-i18n="exp_tag">// 04. EXPERIENCE</span>
+                    <h2 data-i18n="exp_title">Deneyim & Kariyer</h2>
+                    <p data-i18n="exp_subtitle">Kurumsal liderlik ve yazılım mühendisliği yolculuğum.</p>
                 </div>
 
                 <div class="timeline-list">
@@ -1399,12 +1443,12 @@
                     <div class="timeline-card">
                         <div class="timeline-top">
                             <div class="timeline-role">
-                                <h3>Technical IT Leader</h3>
-                                <div class="timeline-company">EplePlast Packaging · İzmir</div>
+                                <h3 data-i18n="exp1_role">Technical IT Leader</h3>
+                                <div class="timeline-company" data-i18n="exp1_company">EplePlast Packaging · İzmir</div>
                             </div>
-                            <span class="timeline-date">07/2025 — Present</span>
+                            <span class="timeline-date" data-i18n="exp1_date">07/2025 — Present</span>
                         </div>
-                        <p class="timeline-desc">
+                        <p class="timeline-desc" data-i18n="exp1_desc">
                             Smart Manufacturing ve kaynak optimizasyonu odaklı dijital dönüşüm yol haritasını yönettim.
                             Üretim hatlarıyla entegre kurumsal uygulamalar geliştirerek %99.9 uptime sağladım;
                             otomasyon ve sistem konsolidasyonu ile yazılım maliyetlerini %70 azalttım.
@@ -1415,13 +1459,13 @@
                     <div class="timeline-card">
                         <div class="timeline-top">
                             <div class="timeline-role">
-                                <h3>Senior Full-Stack Developer</h3>
-                                <div class="timeline-company">BilgeAdam Technology · Outsource – Garanti BBVA Technology
+                                <h3 data-i18n="exp2_role">Senior Full-Stack Developer</h3>
+                                <div class="timeline-company" data-i18n="exp2_company">BilgeAdam Technology · Outsource – Garanti BBVA Technology
                                 </div>
                             </div>
-                            <span class="timeline-date">04/2024 — 07/2025</span>
+                            <span class="timeline-date" data-i18n="exp2_date">04/2024 — 07/2025</span>
                         </div>
-                        <p class="timeline-desc">
+                        <p class="timeline-desc" data-i18n="exp2_desc">
                             7.000+ aktif kullanıcıyı destekleyen User Management System geliştirdim.
                             Java Spring Boot servislerini güvenlik standartlarına uygun şekilde optimize ettim ve
                             C# / Entity Framework Core optimizasyonları ile Asset Management modülünün response
@@ -1432,12 +1476,12 @@
                     <div class="timeline-card">
                         <div class="timeline-top">
                             <div class="timeline-role">
-                                <h3>Full-Stack Developer</h3>
-                                <div class="timeline-company">Eropa · SAP Business One Solutions · İzmir</div>
+                                <h3 data-i18n="exp3_role">Full-Stack Developer</h3>
+                                <div class="timeline-company" data-i18n="exp3_company">Eropa · SAP Business One Solutions · İzmir</div>
                             </div>
-                            <span class="timeline-date">08/2022 — 10/2023</span>
+                            <span class="timeline-date" data-i18n="exp3_date">08/2022 — 10/2023</span>
                         </div>
-                        <p class="timeline-desc">
+                        <p class="timeline-desc" data-i18n="exp3_desc">
                             Ekip verimliliğini %35 artıran task management platformu geliştirdim.
                             Flutter ile gerçek zamanlı üretim verisi toplayan mobil SAP araçları geliştirdim
                             ve optimize API mimarisiyle veri işleme sürelerini %50 azalttım.
@@ -1447,12 +1491,12 @@
                     <div class="timeline-card">
                         <div class="timeline-top">
                             <div class="timeline-role">
-                                <h3>Software Developer</h3>
-                                <div class="timeline-company">Erze Packaging · İzmir</div>
+                                <h3 data-i18n="exp4_role">Software Developer</h3>
+                                <div class="timeline-company" data-i18n="exp4_company">Erze Packaging · İzmir</div>
                             </div>
-                            <span class="timeline-date">08/2020 — 08/2022</span>
+                            <span class="timeline-date" data-i18n="exp4_date">08/2020 — 08/2022</span>
                         </div>
-                        <p class="timeline-desc">
+                        <p class="timeline-desc" data-i18n="exp4_desc">
                             SAP REST API kullanan ERZE_SAP entegrasyon katmanını geliştirdim.
                             Yüksek hacimli üretim süreçlerini özel .NET çözümleriyle otomatikleştirdim
                             ve sistem optimizasyonu ile SAP lisans maliyetlerinde yıllık %50 düşüş sağladım.
@@ -1466,15 +1510,15 @@
         <section id="contact" style="padding-bottom: 90px;">
             <div class="container">
                 <div class="contact-card">
-                    <span class="section-tag" style="margin-bottom: 12px;">// 05. CONTACT ME</span>
-                    <h2>Hakan Emre Çavuş ile<br>İletişime Geçin.</h2>
-                    <p>
+                    <span class="section-tag" style="margin-bottom: 12px;" data-i18n="contact_tag">// 05. CONTACT ME</span>
+                    <h2 data-i18n="contact_title">Benimle<br>İletişime Geçin.</h2>
+                    <p data-i18n="contact_desc">
                         Yazılım geliştirme, kurumsal sistemler, SaaS ürünleri veya iş birliği fırsatları için doğrudan
                         bana ulaşabilirsiniz.
                     </p>
                     <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
-                        <a class="btn btn-green-fill" href="mailto:hakanemrecavus@gmail.com">E-posta Gönder ✉</a>
-                        <a class="btn btn-outline-dark" href="assets/cv/Hakan_Emre_Cavus_CV.pdf" download>
+                        <a class="btn btn-green-fill" href="mailto:hakanemrecavus@gmail.com" data-i18n="contact_email_btn">E-posta Gönder ✉</a>
+                        <a class="btn btn-outline-dark" href="assets/cv/Hakan_Emre_Cavus_CV.pdf" download data-i18n="contact_cv_btn">
                             CV (PDF) 📄
                         </a>
                         <a class="btn btn-outline-dark" href="https://github.com/Hakanecavus" target="_blank">GitHub</a>
@@ -1489,8 +1533,8 @@
 
     <footer>
         <div class="container footer-inner">
-            <span>© 2026 Hakan Emre Çavuş</span>
-            <span>B.Sc. Computer Engineering · İzmir University of Economics · MÜDEK / Washington Accord</span>
+            <span data-i18n="footer_rights">© 2026 Hakan Emre Çavuş</span>
+            <span data-i18n="footer_degree">B.Sc. Computer Engineering · İzmir University of Economics · MÜDEK / Washington Accord</span>
         </div>
     </footer>
 
@@ -1514,14 +1558,14 @@
                 <div class="modal-gallery-wrapper" id="modal-gallery-wrapper">
                 </div>
 
-                <div class="modal-section-title">Proje Hakkında</div>
+                <div class="modal-section-title" data-i18n="modal_about_title">Proje Hakkında</div>
                 <p class="modal-description" id="modal-desc">Detaylı açıklama...</p>
 
-                <div class="modal-section-title">Öne Çıkan Özellikler & Çözümler</div>
+                <div class="modal-section-title" data-i18n="modal_features_title">Öne Çıkan Özellikler & Çözümler</div>
                 <ul class="modal-features-list" id="modal-features">
                 </ul>
 
-                <div class="modal-section-title">Kullanılan Teknolojiler & Araçlar</div>
+                <div class="modal-section-title" data-i18n="modal_tech_title">Kullanılan Teknolojiler & Araçlar</div>
                 <div class="modal-tech-pills" id="modal-tech">
                 </div>
 
