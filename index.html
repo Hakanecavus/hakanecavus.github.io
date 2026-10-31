@@ -774,8 +774,50 @@
 
         .timeline-desc {
             color: var(--text-muted);
-            font-size: 0.98rem;
-            line-height: 1.7;
+            font-size: 0.96rem;
+            line-height: 1.65;
+        }
+
+        .timeline-desc ul {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 0;
+        }
+
+        .timeline-desc li {
+            position: relative;
+            padding-left: 22px;
+            color: #334155;
+            font-size: 0.94rem;
+            line-height: 1.65;
+        }
+
+        .timeline-desc li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary-green);
+            font-weight: 700;
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+        .timeline-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 18px;
+            padding-top: 16px;
+            border-top: 1px dashed var(--border-light);
+        }
+
+        .timeline-tags .tech-pill {
+            font-size: 0.82rem;
+            padding: 5px 12px;
         }
 
         .contact-card {
@@ -1173,6 +1215,10 @@
                 padding: 18px;
                 justify-content: center;
             }
+
+            .timeline-card {
+                padding: 24px 18px;
+            }
         }
     </style>
 </head>
@@ -1198,7 +1244,7 @@
                 <a href="#projects" data-i18n="nav_projects">Projeler</a>
                 <a href="#experience" data-i18n="nav_experience">Deneyim</a>
                 <a href="#contact" data-i18n="nav_contact">İletişim</a>
-                <a href="assets/cv/Hakan_Emre_Cavus_CV.pdf" download class="btn-download-cv">
+                <a href="assets/cv/Hakan_Emre_Cavus_CV_TR.pdf" target="_blank" rel="noopener noreferrer" class="btn-download-cv cv-download-link">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2.2">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -1276,7 +1322,7 @@
                     <a class="btn btn-green-fill" href="#projects" data-i18n="hero_btn_projects">
                         Projelerimi Gör ↘
                     </a>
-                    <a class="btn btn-outline-dark" href="assets/cv/Hakan_Emre_Cavus_CV.pdf" download data-i18n="hero_btn_cv">
+                    <a class="btn btn-outline-dark cv-download-link" href="assets/cv/Hakan_Emre_Cavus_CV_TR.pdf" target="_blank" rel="noopener noreferrer" data-i18n="hero_btn_cv">
                         CV (PDF) 📄
                     </a>
                     <a class="btn btn-outline-dark" href="#contact" data-i18n="hero_btn_contact">
@@ -1324,7 +1370,7 @@
                                 <h4 data-i18n="about_cv_title">Hakan Emre Çavuş — Özgeçmiş (CV)</h4>
                                 <p data-i18n="about_cv_desc">Detaylı kariyer ve teknik uzmanlık özetim için PDF CV'mi indirebilirsiniz.</p>
                             </div>
-                            <a href="assets/cv/Hakan_Emre_Cavus_CV.pdf" download class="btn btn-green-fill" data-i18n="about_cv_btn">
+                            <a href="assets/cv/Hakan_Emre_Cavus_CV_TR.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-green-fill cv-download-link" data-i18n="about_cv_btn">
                                 CV (PDF) 📄
                             </a>
                         </div>
@@ -1443,64 +1489,118 @@
                     <div class="timeline-card">
                         <div class="timeline-top">
                             <div class="timeline-role">
-                                <h3 data-i18n="exp1_role">Technical IT Leader</h3>
-                                <div class="timeline-company" data-i18n="exp1_company">EplePlast Packaging · İzmir</div>
+                                <h3 data-i18n="exp1_role">Kıdemli Yazılım Mühendisi / Teknik Lider</h3>
+                                <div class="timeline-company" data-i18n="exp1_company">EplePlast Packaging · İzmir, Türkiye</div>
                             </div>
-                            <span class="timeline-date" data-i18n="exp1_date">07/2025 — Present</span>
+                            <span class="timeline-date" data-i18n="exp1_date">Temmuz 2025 – Günümüz</span>
                         </div>
-                        <p class="timeline-desc" data-i18n="exp1_desc">
-                            Smart Manufacturing ve kaynak optimizasyonu odaklı dijital dönüşüm yol haritasını yönettim.
-                            Üretim hatlarıyla entegre kurumsal uygulamalar geliştirerek %99.9 uptime sağladım;
-                            otomasyon ve sistem konsolidasyonu ile yazılım maliyetlerini %70 azalttım.
-                            RFID tabanlı envanter otomasyonu ile stok doğruluğunu %98'e çıkardım.
-                        </p>
+                        <div class="timeline-desc" data-i18n="exp1_desc">
+                            <ul>
+                                <li>5 kişilik mühendislik ekibine teknik liderlik ve mentorluk sağlıyorum. Mimari standartların belirlenmesi, kod kalite kriterlerinin oluşturulması, sprint önceliklerinin belirlenmesi ve yazılım teslimat yol haritalarının yönetilmesinden sorumluyum.</li>
+                                <li>Devam eden SAP Public Cloud dönüşüm inisiyatifi kapsamında; geliştirilen kurumsal mikroservis ve entegrasyonların bulut ortamına güvenli ve otomatik dağıtımını sağlayan Azure tabanlı CI/CD pipeline altyapısını kurguluyorum.</li>
+                                <li>Görevlerin sınıflandırılması, teknik iş listesinin (backlog) iyileştirilmesi ve çevik yazılım geliştirme pratiklerinin uygulanmasıyla geliştirme ve teslimat süreçlerini iyileştirdim. Ekip kapasitesini artırmadan özelliklerin teslim sürelerini kısalttım.</li>
+                                <li>Türkiye'deki 4 ve ABD'deki 1 tesis olmak üzere toplam 5 tesiste, aylık yaklaşık 3.000 tonluk malzeme hareketini takip eden olay güdümlü RFID envanter platformunu C#/.NET BackgroundService ve HostedService altyapısıyla tasarladım ve geliştirdim. Sistem sayesinde %98 envanter doğruluğuna ulaştım.</li>
+                                <li>Üretim hattındaki sensörlerden elde edilen verileri şirket içi (on-premise) merkezi sunuculara ve kurumsal sistemlere aktaran uçtan uca endüstriyel telemetri altyapısını geliştirdim; yüksek sistem sürekliliği sağlayarak fabrika sahası için gerçek zamanlı operasyonel görünürlük sundum.</li>
+                                <li>ResNet-18 transfer öğrenimi yöntemini kullanarak kuruma özel üretim hata verileri üzerinde model ince ayarı gerçekleştirdim ve uçtan uca bir endüstriyel kalite kontrol hattı geliştirdim. Hata konumlarını gösteren ısı haritaları üreten, Docker konteynerlerinde çalışan FastAPI tabanlı çıkarım mikroservislerini Flutter saha uygulamasına entegre ettim.</li>
+                                <li>Three.js ve WebGL kullanarak depo yerleşimini, raf yapılandırmalarını ve anlık envanter konumlarını parametrik olarak görselleştiren etkileşimli bir 3B dijital ikiz arayüzü geliştirdim.</li>
+                                <li>Eski monolitik uygulamaları modernize ederek iş mantığını Dapper ve SAP Business One Service Layer entegrasyonuna sahip merkezi .NET servislerine taşıdım. Böylece bakım karmaşıklığını ve operasyonel destek yükünü azalttım.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-tags">
+                            <span class="tech-pill">.NET 8</span>
+                            <span class="tech-pill">C#</span>
+                            <span class="tech-pill">Azure CI/CD</span>
+                            <span class="tech-pill">SAP Public Cloud</span>
+                            <span class="tech-pill">FastAPI</span>
+                            <span class="tech-pill">PyTorch / ResNet-18</span>
+                            <span class="tech-pill">Docker</span>
+                            <span class="tech-pill">RFID</span>
+                            <span class="tech-pill">Three.js / WebGL</span>
+                            <span class="tech-pill">Flutter</span>
+                            <span class="tech-pill">Dapper</span>
+                        </div>
                     </div>
 
                     <div class="timeline-card">
                         <div class="timeline-top">
                             <div class="timeline-role">
-                                <h3 data-i18n="exp2_role">Senior Full-Stack Developer</h3>
-                                <div class="timeline-company" data-i18n="exp2_company">BilgeAdam Technology · Outsource – Garanti BBVA Technology
-                                </div>
+                                <h3 data-i18n="exp2_role">Kıdemli Yazılım Mühendisi</h3>
+                                <div class="timeline-company" data-i18n="exp2_company">BilgeAdam Technology (Garanti BBVA Technology görevlendirmesi) · Ankara, Türkiye</div>
                             </div>
-                            <span class="timeline-date" data-i18n="exp2_date">04/2024 — 07/2025</span>
+                            <span class="timeline-date" data-i18n="exp2_date">Nisan 2024 – Temmuz 2025</span>
                         </div>
-                        <p class="timeline-desc" data-i18n="exp2_desc">
-                            7.000+ aktif kullanıcıyı destekleyen User Management System geliştirdim.
-                            Java Spring Boot servislerini güvenlik standartlarına uygun şekilde optimize ettim ve
-                            C# / Entity Framework Core optimizasyonları ile Asset Management modülünün response
-                            sürelerini %70 iyileştirdim.
-                        </p>
+                        <div class="timeline-desc" data-i18n="exp2_desc">
+                            <ul>
+                                <li>7.000'den fazla aktif kurumsal kullanıcıya hizmet veren kimlik ve erişim yönetimi platformu için ölçeklenebilir backend servisleri ve yetkilendirme süreçleri geliştirdim.</li>
+                                <li>30.000 çalışanın hak ediş matrisini değerlendiren zimmet modülündeki servisleri optimize ettim. SQL Execution Plan analizleri, Table Scan sorunlarının giderilmesi, hedefe yönelik indeksleme ve Dapper sorgularının asenkron biçimde yeniden yapılandırılması sayesinde P95 sorgu yanıt süresini yaklaşık %70 azalttım.</li>
+                                <li>Bankacılık regülasyonları, finansal veri gizliliği standartları ve Zero Trust güvenlik ilkeleriyle uyumlu, yüksek performanslı Java Spring Boot mikroservisleri geliştirdim.</li>
+                                <li>Kuruma özel Bitbucket CI/CD süreçlerinde kalite kontrol aşamalarını (Quality Gates) yönettim. xUnit/JUnit test paketleriyle canlıya geçiş öncesinde %80'in üzerinde test kapsamı (Code Coverage) uygulanmasını sağladım.</li>
+                                <li>Kesintisiz üretim geçişlerini desteklemek amacıyla çevik yazılım geliştirme süreçlerinde güvenlik, altyapı ve kalite güvence (QA) ekipleriyle koordineli çalıştım.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-tags">
+                            <span class="tech-pill">Java</span>
+                            <span class="tech-pill">Spring Boot</span>
+                            <span class="tech-pill">C# / .NET Core</span>
+                            <span class="tech-pill">Dapper</span>
+                            <span class="tech-pill">MS SQL Server</span>
+                            <span class="tech-pill">Execution Plan & Indexing</span>
+                            <span class="tech-pill">Zero Trust</span>
+                            <span class="tech-pill">Bitbucket CI/CD</span>
+                            <span class="tech-pill">xUnit / JUnit</span>
+                        </div>
                     </div>
 
                     <div class="timeline-card">
                         <div class="timeline-top">
                             <div class="timeline-role">
-                                <h3 data-i18n="exp3_role">Full-Stack Developer</h3>
-                                <div class="timeline-company" data-i18n="exp3_company">Eropa · SAP Business One Solutions · İzmir</div>
+                                <h3 data-i18n="exp3_role">Full-Stack Yazılım Mühendisi</h3>
+                                <div class="timeline-company" data-i18n="exp3_company">Eropa (Kurumsal ERP ve Bulut Çözümleri) · İzmir, Türkiye</div>
                             </div>
-                            <span class="timeline-date" data-i18n="exp3_date">08/2022 — 10/2023</span>
+                            <span class="timeline-date" data-i18n="exp3_date">Ağustos 2022 – Ekim 2023</span>
                         </div>
-                        <p class="timeline-desc" data-i18n="exp3_desc">
-                            Ekip verimliliğini %35 artıran task management platformu geliştirdim.
-                            Flutter ile gerçek zamanlı üretim verisi toplayan mobil SAP araçları geliştirdim
-                            ve optimize API mimarisiyle veri işleme sürelerini %50 azalttım.
-                        </p>
+                        <div class="timeline-desc" data-i18n="exp3_desc">
+                            <ul>
+                                <li>.NET Core ve Angular kullanarak kurumsal görev, personel ve kaynak yönetimi platformu geliştirdim. Modüler servis tasarımıyla mühendislik ekibinin geliştirme hızını yaklaşık %35 artırdım.</li>
+                                <li>Saha operasyonlarında anlık veri toplama ve kurumsal sistemlerle çift yönlü veri senkronizasyonu sağlayan Flutter mobil uygulamaları geliştirdim ve RESTful API'ler aracılığıyla entegre ettim.</li>
+                                <li>Eski senkron veri alışverişi arayüzlerini asenkron RESTful API uç noktalarına dönüştürerek ağ trafiğini ve veritabanı kilitlenmelerini azalttım.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-tags">
+                            <span class="tech-pill">.NET Core</span>
+                            <span class="tech-pill">C#</span>
+                            <span class="tech-pill">Angular</span>
+                            <span class="tech-pill">Flutter</span>
+                            <span class="tech-pill">RESTful APIs</span>
+                            <span class="tech-pill">ERP Solutions</span>
+                            <span class="tech-pill">SQL</span>
+                        </div>
                     </div>
 
                     <div class="timeline-card">
                         <div class="timeline-top">
                             <div class="timeline-role">
-                                <h3 data-i18n="exp4_role">Software Developer</h3>
-                                <div class="timeline-company" data-i18n="exp4_company">Erze Packaging · İzmir</div>
+                                <h3 data-i18n="exp4_role">Yazılım Mühendisi</h3>
+                                <div class="timeline-company" data-i18n="exp4_company">Erze Packaging · İzmir, Türkiye</div>
                             </div>
-                            <span class="timeline-date" data-i18n="exp4_date">08/2020 — 08/2022</span>
+                            <span class="timeline-date" data-i18n="exp4_date">Ağustos 2020 – Ağustos 2022</span>
                         </div>
-                        <p class="timeline-desc" data-i18n="exp4_desc">
-                            SAP REST API kullanan ERZE_SAP entegrasyon katmanını geliştirdim.
-                            Yüksek hacimli üretim süreçlerini özel .NET çözümleriyle otomatikleştirdim
-                            ve sistem optimizasyonu ile SAP lisans maliyetlerinde yıllık %50 düşüş sağladım.
-                        </p>
+                        <div class="timeline-desc" data-i18n="exp4_desc">
+                            <ul>
+                                <li>Üretim Yürütme Sistemleri (MES) ile SAP Business One arasında REST API'ler üzerinden çift yönlü veri ve işlem senkronizasyonu sağlayan ERZE_SAP adlı özel .NET entegrasyon ara katmanını geliştirdim.</li>
+                                <li>Satın alma, faturalama ve malzeme takip süreçlerini özel yazılım modülleriyle otomatikleştirerek veri tutarsızlıklarını önledim. Harici ERP lisans ve bakım maliyetlerini yaklaşık %50 azalttım.</li>
+                                <li>Yüksek hacimli işlemsel veritabanı iş yüklerinde (OLTP) performansı artırmak amacıyla saklı yordamlar (Stored Procedures), veritabanı görünümleri (Views) ve optimize edilmiş SQL indeksleri geliştirdim.</li>
+                            </ul>
+                        </div>
+                        <div class="timeline-tags">
+                            <span class="tech-pill">.NET</span>
+                            <span class="tech-pill">C#</span>
+                            <span class="tech-pill">SAP Business One</span>
+                            <span class="tech-pill">MES Entegrasyonu</span>
+                            <span class="tech-pill">REST APIs</span>
+                            <span class="tech-pill">Stored Procedures</span>
+                            <span class="tech-pill">SQL Server / OLTP</span>
+                        </div>
                     </div>
 
                 </div>
@@ -1518,7 +1618,7 @@
                     </p>
                     <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
                         <a class="btn btn-green-fill" href="mailto:hakanemrecavus@gmail.com" data-i18n="contact_email_btn">E-posta Gönder ✉</a>
-                        <a class="btn btn-outline-dark" href="assets/cv/Hakan_Emre_Cavus_CV.pdf" download data-i18n="contact_cv_btn">
+                        <a class="btn btn-outline-dark cv-download-link" href="assets/cv/Hakan_Emre_Cavus_CV_TR.pdf" target="_blank" rel="noopener noreferrer" data-i18n="contact_cv_btn">
                             CV (PDF) 📄
                         </a>
                         <a class="btn btn-outline-dark" href="https://github.com/Hakanecavus" target="_blank">GitHub</a>

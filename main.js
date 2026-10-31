@@ -84,22 +84,45 @@ const TRANSLATIONS = {
         exp_tag: "// 04. EXPERIENCE",
         exp_title: "Deneyim & Kariyer",
         exp_subtitle: "Kurumsal liderlik ve yazılım mühendisliği yolculuğum.",
-        exp1_role: "Technical IT Leader",
-        exp1_company: "EplePlast Packaging · İzmir",
-        exp1_date: "07/2025 — Present",
-        exp1_desc: "Smart Manufacturing ve kaynak optimizasyonu odaklı dijital dönüşüm yol haritasını yönettim. Üretim hatlarıyla entegre kurumsal uygulamalar geliştirerek %99.9 uptime sağladım; otomasyon ve sistem konsolidasyonu ile yazılım maliyetlerini %70 azalttım. RFID tabanlı envanter otomasyonu ile stok doğruluğunu %98'e çıkardım.",
-        exp2_role: "Senior Full-Stack Developer",
-        exp2_company: "BilgeAdam Technology · Outsource – Garanti BBVA Technology",
-        exp2_date: "04/2024 — 07/2025",
-        exp2_desc: "7.000+ aktif kullanıcıyı destekleyen User Management System geliştirdim. Java Spring Boot servislerini güvenlik standartlarına uygun şekilde optimize ettim ve C# / Entity Framework Core optimizasyonları ile Asset Management modülünün response sürelerini %70 iyileştirdim.",
-        exp3_role: "Full-Stack Developer",
-        exp3_company: "Eropa · SAP Business One Solutions · İzmir",
-        exp3_date: "08/2022 — 10/2023",
-        exp3_desc: "Ekip verimliliğini %35 artıran task management platformu geliştirdim. Flutter ile gerçek zamanlı üretim verisi toplayan mobil SAP araçları geliştirdim ve optimize API mimarisiyle veri işleme sürelerini %50 azalttım.",
-        exp4_role: "Software Developer",
-        exp4_company: "Erze Packaging · İzmir",
-        exp4_date: "08/2020 — 08/2022",
-        exp4_desc: "SAP REST API kullanan ERZE_SAP entegrasyon katmanını geliştirdim. Yüksek hacimli üretim süreçlerini özel .NET çözümleriyle otomatikleştirdim ve sistem optimizasyonu ile SAP lisans maliyetlerinde yıllık %50 düşüş sağladım.",
+        exp1_role: "Kıdemli Yazılım Mühendisi / Teknik Lider",
+        exp1_company: "EplePlast Packaging · İzmir, Türkiye",
+        exp1_date: "Temmuz 2025 – Günümüz",
+        exp1_desc: `<ul>
+            <li>5 kişilik mühendislik ekibine teknik liderlik ve mentorluk sağlıyorum. Mimari standartların belirlenmesi, kod kalite kriterlerinin oluşturulması, sprint önceliklerinin belirlenmesi ve yazılım teslimat yol haritalarının yönetilmesinden sorumluyum.</li>
+            <li>Devam eden SAP Public Cloud dönüşüm inisiyatifi kapsamında; geliştirilen kurumsal mikroservis ve entegrasyonların bulut ortamına güvenli ve otomatik dağıtımını sağlayan Azure tabanlı CI/CD pipeline altyapısını kurguluyorum.</li>
+            <li>Görevlerin sınıflandırılması, teknik iş listesinin (backlog) iyileştirilmesi ve çevik yazılım geliştirme pratiklerinin uygulanmasıyla geliştirme ve teslimat süreçlerini iyileştirdim. Ekip kapasitesini artırmadan özelliklerin teslim sürelerini kısalttım.</li>
+            <li>Türkiye'deki 4 ve ABD'deki 1 tesis olmak üzere toplam 5 tesiste, aylık yaklaşık 3.000 tonluk malzeme hareketini takip eden olay güdümlü RFID envanter platformunu C#/.NET BackgroundService ve HostedService altyapısıyla tasarladım ve geliştirdim. Sistem sayesinde %98 envanter doğruluğuna ulaştım.</li>
+            <li>Üretim hattındaki sensörlerden elde edilen verileri şirket içi (on-premise) merkezi sunuculara ve kurumsal sistemlere aktaran uçtan uca endüstriyel telemetri altyapısını geliştirdim; yüksek sistem sürekliliği sağlayarak fabrika sahası için gerçek zamanlı operasyonel görünürlük sundum.</li>
+            <li>ResNet-18 transfer öğrenimi yöntemini kullanarak kuruma özel üretim hata verileri üzerinde model ince ayarı gerçekleştirdim ve uçtan uca bir endüstriyel kalite kontrol hattı geliştirdim. Hata konumlarını gösteren ısı haritaları üreten, Docker konteynerlerinde çalışan FastAPI tabanlı çıkarım mikroservislerini Flutter saha uygulamasına entegre ettim.</li>
+            <li>Three.js ve WebGL kullanarak depo yerleşimini, raf yapılandırmalarını ve anlık envanter konumlarını parametrik olarak görselleştiren etkileşimli bir 3B dijital ikiz arayüzü geliştirdim.</li>
+            <li>Eski monolitik uygulamaları modernize ederek iş mantığını Dapper ve SAP Business One Service Layer entegrasyonuna sahip merkezi .NET servislerine taşıdım. Böylece bakım karmaşıklığını ve operasyonel destek yükünü azalttım.</li>
+        </ul>`,
+        exp2_role: "Kıdemli Yazılım Mühendisi",
+        exp2_company: "BilgeAdam Technology (Garanti BBVA Technology görevlendirmesi) · Ankara, Türkiye",
+        exp2_date: "Nisan 2024 – Temmuz 2025",
+        exp2_desc: `<ul>
+            <li>7.000'den fazla aktif kurumsal kullanıcıya hizmet veren kimlik ve erişim yönetimi platformu için ölçeklenebilir backend servisleri ve yetkilendirme süreçleri geliştirdim.</li>
+            <li>30.000 çalışanın hak ediş matrisini değerlendiren zimmet modülündeki servisleri optimize ettim. SQL Execution Plan analizleri, Table Scan sorunlarının giderilmesi, hedefe yönelik indeksleme ve Dapper sorgularının asenkron biçimde yeniden yapılandırılması sayesinde P95 sorgu yanıt süresini yaklaşık %70 azalttım.</li>
+            <li>Bankacılık regülasyonları, finansal veri gizliliği standartları ve Zero Trust güvenlik ilkeleriyle uyumlu, yüksek performanslı Java Spring Boot mikroservisleri geliştirdim.</li>
+            <li>Kuruma özel Bitbucket CI/CD süreçlerinde kalite kontrol aşamalarını (Quality Gates) yönettim. xUnit/JUnit test paketleriyle canlıya geçiş öncesinde %80'in üzerinde test kapsamı (Code Coverage) uygulanmasını sağladım.</li>
+            <li>Kesintisiz üretim geçişlerini desteklemek amacıyla çevik yazılım geliştirme süreçlerinde güvenlik, altyapı ve kalite güvence (QA) ekipleriyle koordineli çalıştım.</li>
+        </ul>`,
+        exp3_role: "Full-Stack Yazılım Mühendisi",
+        exp3_company: "Eropa (Kurumsal ERP ve Bulut Çözümleri) · İzmir, Türkiye",
+        exp3_date: "Ağustos 2022 – Ekim 2023",
+        exp3_desc: `<ul>
+            <li>.NET Core ve Angular kullanarak kurumsal görev, personel ve kaynak yönetimi platformu geliştirdim. Modüler servis tasarımıyla mühendislik ekibinin geliştirme hızını yaklaşık %35 artırdım.</li>
+            <li>Saha operasyonlarında anlık veri toplama ve kurumsal sistemlerle çift yönlü veri senkronizasyonu sağlayan Flutter mobil uygulamaları geliştirdim ve RESTful API'ler aracılığıyla entegre ettim.</li>
+            <li>Eski senkron veri alışverişi arayüzlerini asenkron RESTful API uç noktalarına dönüştürerek ağ trafiğini ve veritabanı kilitlenmelerini azalttım.</li>
+        </ul>`,
+        exp4_role: "Yazılım Mühendisi",
+        exp4_company: "Erze Packaging · İzmir, Türkiye",
+        exp4_date: "Ağustos 2020 – Ağustos 2022",
+        exp4_desc: `<ul>
+            <li>Üretim Yürütme Sistemleri (MES) ile SAP Business One arasında REST API'ler üzerinden çift yönlü veri ve işlem senkronizasyonu sağlayan ERZE_SAP adlı özel .NET entegrasyon ara katmanını geliştirdim.</li>
+            <li>Satın alma, faturalama ve malzeme takip süreçlerini özel yazılım modülleriyle otomatikleştirerek veri tutarsızlıklarını önledim. Harici ERP lisans ve bakım maliyetlerini yaklaşık %50 azalttım.</li>
+            <li>Yüksek hacimli işlemsel veritabanı iş yüklerinde (OLTP) performansı artırmak amacıyla saklı yordamlar (Stored Procedures), veritabanı görünümleri (Views) ve optimize edilmiş SQL indeksleri geliştirdim.</li>
+        </ul>`,
 
         contact_tag: "// 05. CONTACT ME",
         contact_title: "Benimle<br>İletişime Geçin.",
@@ -113,7 +136,7 @@ const TRANSLATIONS = {
         modal_about_title: "Proje Hakkında",
         modal_features_title: "Öne Çıkan Özellikler & Çözümler",
         modal_tech_title: "Kullanılan Teknolojiler & Araçlar",
-        modal_placeholder_desc: "Proje detayları ve teknik mimari yukarıda özetlenmiştir.",
+        modal_placeholder_desc: "Proje detayları ve teknik mimari aşağıda özetlenmiştir.",
         modal_close_label: "Pop-up Kapat",
         modal_live_demo: "Canlı Demo",
         modal_github: "GitHub Repository"
@@ -172,22 +195,45 @@ const TRANSLATIONS = {
         exp_tag: "// 04. EXPERIENCE",
         exp_title: "Experience & Career",
         exp_subtitle: "My journey in engineering leadership and software development.",
-        exp1_role: "Technical IT Leader",
-        exp1_company: "EplePlast Packaging · Izmir",
-        exp1_date: "07/2025 — Present",
-        exp1_desc: "Spearheaded the digital transformation roadmap focused on Smart Manufacturing and resource optimization. Architected shop-floor integrated enterprise applications achieving 99.9% uptime; reduced software licensing costs by 70% via consolidation. Elevated inventory accuracy to 98% by deploying RFID-based asset automation.",
-        exp2_role: "Senior Full-Stack Developer",
-        exp2_company: "BilgeAdam Technology · Outsource – Garanti BBVA Technology",
-        exp2_date: "04/2024 — 07/2025",
-        exp2_desc: "Engineered an enterprise User Management System supporting 7,000+ active enterprise users. Optimized Java Spring Boot microservices in compliance with banking security standards and reduced API response latencies by 70% in the Asset Management module through C# / Entity Framework Core tuning.",
-        exp3_role: "Full-Stack Developer",
-        exp3_company: "Eropa · SAP Business One Solutions · Izmir",
-        exp3_date: "08/2022 — 10/2023",
-        exp3_desc: "Built a collaborative task management platform boosting team efficiency by 35%. Developed real-time shop-floor mobile SAP applications with Flutter, cutting data processing latency by 50% via optimized API architecture.",
-        exp4_role: "Software Developer",
-        exp4_company: "Erze Packaging · Izmir",
-        exp4_date: "08/2020 — 08/2022",
-        exp4_desc: "Developed the ERZE_SAP integration layer powered by SAP REST API. Automated high-volume manufacturing workflows using custom .NET applications, driving a 50% reduction in annual SAP licensing overhead.",
+        exp1_role: "Senior Software Engineer / Technical Lead",
+        exp1_company: "EplePlast Packaging · İzmir, Türkiye",
+        exp1_date: "July 2025 – Present",
+        exp1_desc: `<ul>
+            <li>Provide technical leadership and mentorship to a 5-person engineering team; responsible for defining architectural standards, establishing code quality benchmarks, prioritizing sprints, and directing software delivery roadmaps.</li>
+            <li>Architecting and establishing Azure-based CI/CD deployment pipelines to automate the delivery of enterprise integration microservices as part of the ongoing SAP Public Cloud migration initiative.</li>
+            <li>Streamlined development and delivery workflows by introducing structured task classification, technical backlog refinement, and agile engineering practices; shortened feature lead times without increasing team headcount.</li>
+            <li>Architected and deployed an event-driven RFID inventory tracking platform using C#/.NET BackgroundService and HostedService architectures, managing ~3,000 tons of monthly material movements across 5 facilities (4 in Türkiye, 1 in the US) to achieve 98% inventory accuracy.</li>
+            <li>Engineered edge-to-server industrial telemetry pipelines connecting production-line sensors to centralized on-premise servers and enterprise systems, ensuring robust high availability and real-time operational visibility across shop-floor operations.</li>
+            <li>Developed an end-to-end industrial quality inspection pipeline using fine-tuned ResNet-18 transfer learning on proprietary defect data; integrated Dockerized FastAPI inference microservices producing defect localization heat maps directly into a Flutter field app.</li>
+            <li>Built an interactive 3D digital twin warehouse visualization interface using Three.js and WebGL, allowing parametric configuration of warehouse layouts, rack allocations, and live inventory positioning.</li>
+            <li>Modernized legacy monolithic applications by consolidating business logic into unified .NET services integrated with Dapper and SAP Business One Service Layer, substantially cutting maintenance complexity and operational support overhead.</li>
+        </ul>`,
+        exp2_role: "Senior Software Engineer",
+        exp2_company: "BilgeAdam Technology (Assigned to Garanti BBVA Technology) · Ankara, Türkiye",
+        exp2_date: "April 2024 – July 2025",
+        exp2_desc: `<ul>
+            <li>Developed scalable backend services and authorization workflows for an enterprise identity and access management platform serving over 7,000 active corporate users.</li>
+            <li>Optimized backend services in the asset allocation module evaluating entitlement matrices for 30,000 employees; reduced P95 query latency by ~70% through SQL Execution Plan analysis, table scan elimination, targeted indexing, and asynchronous Dapper query restructuring.</li>
+            <li>Engineered high-performance Java Spring Boot microservices fully compliant with banking regulations, financial data privacy standards, and Zero Trust security principles.</li>
+            <li>Managed automated Quality Gates within custom corporate Bitbucket CI/CD pipelines, enforcing mandatory >80% code coverage via rigorous xUnit/JUnit test suites prior to production deployments.</li>
+            <li>Collaborated cross-functionally with security, infrastructure, and QA teams within an Agile delivery framework to support seamless zero-downtime production releases.</li>
+        </ul>`,
+        exp3_role: "Full-Stack Software Engineer",
+        exp3_company: "Eropa (Enterprise ERP & Cloud Solutions) · İzmir, Türkiye",
+        exp3_date: "August 2022 – October 2023",
+        exp3_desc: `<ul>
+            <li>Developed an enterprise task, personnel, and resource management platform using .NET Core and Angular, increasing engineering team delivery velocity by approximately 35% through modular service design.</li>
+            <li>Engineered cross-platform Flutter mobile applications for shop-floor field operations, enabling real-time bi-directional data capture and synchronization with enterprise systems via RESTful APIs.</li>
+            <li>Redesigned legacy synchronous data exchange interfaces into asynchronous RESTful API endpoints, significantly cutting network payload overhead and database transaction locking.</li>
+        </ul>`,
+        exp4_role: "Software Engineer",
+        exp4_company: "Erze Packaging · İzmir, Türkiye",
+        exp4_date: "August 2020 – August 2022",
+        exp4_desc: `<ul>
+            <li>Developed ERZE_SAP, a custom .NET integration middleware establishing bidirectional data and transaction sync between Manufacturing Execution Systems (MES) and SAP Business One via REST APIs.</li>
+            <li>Automated procurement, billing, and material tracking workflows through custom enterprise modules, eliminating data discrepancies and cutting external ERP licensing and maintenance expenditures by approximately 50%.</li>
+            <li>Engineered high-throughput stored procedures, analytical database views, and performance-tuned SQL indexes to accelerate transactional database workloads (OLTP).</li>
+        </ul>`,
 
         contact_tag: "// 05. CONTACT ME",
         contact_title: "Get in Touch<br>With Me.",
@@ -201,7 +247,7 @@ const TRANSLATIONS = {
         modal_about_title: "About Project",
         modal_features_title: "Key Features & Solutions",
         modal_tech_title: "Technologies & Tools Used",
-        modal_placeholder_desc: "Project details and technical architecture are summarized above.",
+        modal_placeholder_desc: "Project details and technical architecture are summarized below.",
         modal_close_label: "Close Pop-up",
         modal_live_demo: "Live Demo",
         modal_github: "GitHub Repository"
@@ -251,6 +297,18 @@ function setLanguage(lang) {
                 el.innerHTML = TRANSLATIONS[lang][key];
             }
         }
+    });
+
+    // Update CV links based on active language (TR vs EN) to view in a new tab
+    const cvFile = lang === 'en'
+        ? 'assets/cv/Hakan_Emre_Cavus_CV_EN.pdf'
+        : 'assets/cv/Hakan_Emre_Cavus_CV_TR.pdf';
+
+    document.querySelectorAll('.cv-download-link, a[href*="assets/cv/"]').forEach(link => {
+        link.setAttribute('href', cvFile);
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+        link.removeAttribute('download');
     });
 
     // Re-render project cards according to active category filter
