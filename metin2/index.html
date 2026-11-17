@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1d211d">
+  <title>HEC Metin2 Masası · Okey ve Kralı Yakala</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="okey.js" defer></script>
+  <script src="king.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="king-ui.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar" aria-label="Uygulama menüsü">
+    <a class="brand" href="#takip" aria-label="HEC Metin2 Masası">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+      <span><strong>HEC</strong><small>METİN2 MASASI</small></span>
+    </a>
+    <nav class="nav">
+      <p class="nav-group">Okey Masası</p>
+      <a href="#takip" data-page="takip" aria-current="page"><span class="nav-icon grid-icon" aria-hidden="true"></span>Kart Takibi</a>
+      <a href="#antrenman" data-page="antrenman"><span class="nav-icon cards-icon" aria-hidden="true"></span>Antrenman</a>
+      <a href="#rehber" data-page="rehber"><span class="nav-icon book-icon" aria-hidden="true"></span>Puan Rehberi</a>
+      <p class="nav-group king-nav-group">Kralı Yakala</p>
+      <a href="#kral-takip" data-page="kral-takip"><span class="nav-icon grid-icon" aria-hidden="true"></span>Kral Not Defteri</a>
+      <a href="#kral-antrenman" data-page="kral-antrenman"><span class="nav-icon cards-icon" aria-hidden="true"></span>Kral Antrenmanı</a>
+    </nav>
+    <div class="sidebar-end"><span class="online-dot" aria-hidden="true"></span> Çevrimdışı kullanılabilir</div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar"><span>Metin2 <span class="slash">/</span> <strong id="breadcrumb">Kart Takibi</strong></span><span class="top-mono">HEC</span></header>
+    <main class="content">
+      <section id="hero" class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> <span id="hero-event">METİN2 OKEY ETKİNLİĞİ</span></p>
+          <h1 id="hero-title">Okey Masası</h1>
+          <p id="hero-description">Kartlarını takip et, hamlelerini antrenmanda dene.</p>
+          <a class="hero-link" id="hero-link" href="#antrenman">Antrenmana geç <span class="arrow" aria-hidden="true"></span></a>
+        </div>
+        <span id="hero-credit" class="image-credit">METİN2 · OYUN İÇİ GÖRÜNTÜ</span>
+      </section>
+
+      <section id="takip" class="workspace" aria-label="Kart takibi">
+        <div class="panel tracker">
+          <div class="panel-head">
+            <div><h2>Kart Takibi</h2><p>Kullandığın veya attığın kartı işaretle.</p></div>
+            <div class="head-actions"><button class="outline" id="tracker-undo" type="button" disabled>Geri al</button><button class="outline" id="tracker-reset" type="button" disabled>Sıfırla</button></div>
+          </div>
+          <div id="tracker-grid"></div>
+          <div class="tracker-foot"><span><i class="legend-available"></i>İşaretlenmemiş</span><span><i class="legend-removed"></i>İşaretli</span><span class="tracker-tip">Tekrar dokunarak geri getir.</span></div>
+        </div>
+        <aside class="rail">
+          <section class="panel deck-panel">
+            <div class="rail-head"><h2>Deste Durumu</h2><img src="assets/okey-seti.png" alt="" width="32" height="32"></div>
+            <p class="deck-stat"><strong id="tracker-remaining">24</strong><span> / 24 kart</span></p>
+            <div class="progress" id="tracker-progress" role="progressbar" aria-label="İşaretlenmemiş kart sayısı" aria-valuemin="0" aria-valuemax="24" aria-valuenow="24"><span></span></div>
+            <div id="tracker-breakdown"></div>
+          </section>
+          <section class="panel reward-panel"><h2>Sandık Eşikleri</h2><div class="rewards" data-rewards></div></section>
+        </aside>
+      </section>
+
+      <section id="antrenman" class="workspace" aria-label="Antrenman" hidden>
+        <div class="panel simulator">
+          <div class="panel-head"><div><h2>Antrenman</h2><p><span class="mouse-instructions">Sol tıkla masaya indir, sağ tıkla kartı at.</span><span class="touch-instructions">Oynamak istediğin kartlara dokunup masaya indir.</span></p></div><button class="outline" id="sim-reset" type="button">Yeni oyun</button></div>
+          <div class="hand-head"><h3>Elindeki kartlar</h3><span id="sim-deck">Destede 24 kart</span></div>
+          <div id="sim-hand" class="sim-hand"></div>
+          <section id="sim-table" class="sim-table" aria-labelledby="sim-table-title">
+            <div class="table-heading"><h3 id="sim-table-title">Oyun Alanı</h3><span id="table-count" aria-hidden="true">0 / 3</span></div>
+            <div id="sim-tray" class="sim-tray"></div>
+            <p id="sim-status" class="sim-status" role="status"></p>
+          </section>
+          <div class="sim-actions">
+            <button class="primary" id="sim-draw" type="button">Kart dağıt</button>
+            <button class="outline discard-toggle" id="sim-discard" type="button" aria-pressed="false" disabled>Kart atma</button>
+            <button class="outline" id="sim-undo" type="button" disabled>Geri al</button>
+          </div>
+          <details class="combos"><summary>Elindeki geçerli üçlüler <span id="combo-count"></span></summary><div id="sim-combos"></div></details>
+        </div>
+        <aside class="rail">
+          <section class="panel deck-panel">
+            <div class="rail-head"><h2>Tur Puanı</h2><img src="assets/okey-seti.png" alt="" width="32" height="32"></div>
+            <p class="deck-stat"><strong id="sim-score">0</strong><span> puan</span></p>
+            <div class="progress" id="sim-progress" role="progressbar" aria-label="Altın sandık hedefi" aria-valuemin="0" aria-valuemax="400" aria-valuenow="0"><span></span></div>
+            <p class="score-note" id="sim-reward"></p>
+          </section>
+          <section class="panel reward-panel history-panel"><h2>Hamle Geçmişi</h2><div id="sim-history"></div></section>
+        </aside>
+      </section>
+
+      <section id="rehber" class="workspace" aria-label="Puan rehberi" hidden>
+        <div class="panel guide">
+          <div class="panel-head"><div><h2>Puan Rehberi</h2><p>Üç farklı kombinasyonla puan kazanabilirsin.</p></div></div>
+          <div id="guide-table" class="guide-table"></div>
+          <div class="guide-note">
+            <h3>Bir tur nasıl oynanır?</h3>
+            <ol>
+              <li>Üç renkte 1–8 arası numaralanmış 24 karttan ilk beşi dağıtılır.</li>
+              <li>Geçerli bir üçlü oyna veya tek kart at. Açılan yerleri desteden doldur.</li>
+              <li>Deste bittiğinde elinde kalan kartlarla son hamlelerini yap.</li>
+            </ol>
+            <a href="https://tr-wiki.metin2.gameforge.com/index.php/Okey_Etkinli%C4%9Fi_(Yaz)" target="_blank" rel="noopener">Metin2 Wiki <span class="arrow" aria-hidden="true"></span></a>
+          </div>
+        </div>
+        <aside class="rail"><section class="panel reward-panel"><h2>Sandık Eşikleri</h2><div class="rewards" data-rewards></div></section></aside>
+      </section>
+      <section id="kral-takip" class="workspace king-workspace" aria-label="Kralı Yakala Not Defteri" hidden>
+        <div class="panel king-panel" id="king-live-notebook">
+          <div class="panel-head"><div><h2>Not Defteri</h2><p>Bir kare seç, açılan kartı ve varsa 5 ipucunu kaydet.</p></div><div class="head-actions"><button class="outline" data-notebook="king-undo" type="button" disabled>Geri al</button><button class="outline" data-notebook="king-reset" type="button" disabled>Sıfırla</button></div></div>
+        </div>
+        <aside class="rail">
+          <section class="panel deck-panel">
+            <div class="rail-head"><h2>Tahta Durumu</h2><img src="assets/king/deck.png" alt="" width="32" height="32"></div>
+            <p class="deck-stat"><strong id="king-unmarked">25</strong><span> / 25 bilinmeyen</span></p>
+            <div id="king-remaining"></div>
+          </section>
+        </aside>
+      </section>
+
+      <section id="kral-antrenman" class="workspace king-workspace" aria-label="Kralı Yakala Antrenmanı" hidden>
+        <div class="panel king-panel">
+          <div class="panel-head"><div><h2>Kral Antrenmanı</h2><p>Elindeki kartla tahtadaki kapalı bir kartı aç.</p></div><button class="outline" id="king-new-game" type="button">Yeni oyun</button></div>
+          <div class="king-hand-bar">
+            <div id="king-current" class="king-current"></div>
+            <div class="king-hand-wrap"><h3>Kalan el</h3><div id="king-hand" class="king-hand"></div></div>
+          </div>
+          <p id="king-trap-guide" class="king-trap-guide" role="status" hidden></p>
+          <div class="king-frame"><div id="king-board" class="king-grid" role="group" aria-label="Kralı Yakala oyun tahtası"></div></div>
+          <div id="king-five-alert" class="king-five-alert" hidden aria-hidden="true"><strong>5</strong><span>Komşulardan birinde kapalı 5 var</span></div>
+          <p id="king-game-status" class="king-game-status" role="status"></p>
+          <section class="king-practice-notebook" id="king-practice-notebook" aria-labelledby="king-practice-note-title">
+            <div class="panel-head">
+              <div><h2 id="king-practice-note-title">Antrenman Not Defteri</h2><p>Bir kareye kart veya ipucu ekle. Notlar bu tura ait.</p></div>
+              <div class="head-actions"><button class="outline" data-notebook="king-undo" type="button" disabled>Geri al</button><button class="outline" data-notebook="king-reset" type="button" disabled>Sıfırla</button></div>
+            </div>
+            <button class="outline king-note-last" id="king-note-last" type="button" disabled>Son hamleyi not et</button>
+          </section>
+        </div>
+        <aside class="rail">
+          <section class="panel deck-panel">
+            <div class="rail-head"><h2>Tur Puanı</h2><img src="assets/king/deck.png" alt="" width="32" height="32"></div>
+            <p class="deck-stat"><strong id="king-score">0</strong><span> puan</span></p>
+            <div class="progress" id="king-progress" role="progressbar" aria-label="Altın Kral Ganimeti hedefi" aria-valuemin="0" aria-valuemax="550" aria-valuenow="0"><span></span></div>
+            <p id="king-reward" class="score-note"></p>
+          </section>
+          <section class="panel reward-panel"><h2>Ganimet Eşikleri</h2><div class="rewards" id="king-rewards"></div></section>
+          <section class="panel reward-panel">
+            <details class="king-rules"><summary>Nasıl oynanır?</summary>
+              <ul>
+                <li>Kartın daha yüksekse puan alır ve aynı kartla devam edersin.</li>
+                <li>Eşitlikte puan alırsın, düşükse hamle puansız biter. İki durumda da sıradaki kart gelir.</li>
+                <li>Elindeki kart 5 iken komşu karede kapalı bir 5 varsa hamle puansız biter.</li>
+                <li>Kralın tek şansı var. Tahtadaki K’yı bulursan +100 puan.</li>
+                <li>Tamamlanan her satır ve sütun +10 puan.</li>
+              </ul>
+              <a href="https://tr-wiki.metin2.gameforge.com/index.php/Kral%C4%B1_Yakala_Etkinli%C4%9Fi" target="_blank" rel="noopener">Metin2 Wiki</a>
+            </details>
+          </section>
+        </aside>
+      </section>
+      <footer><span>© Metin2 görselleri · WEBZEN / Gameforge</span><span>HEC Metin2 Masası</span></footer>
+    </main>
+  </div>
+  <template id="king-notebook-fields">
+          <div class="king-frame"><div data-notebook="king-notes" class="king-grid" role="group" aria-label="Kart notları tahtası"></div></div>
+          <div class="king-legend"><span><i class="king-risk"></i>5 olabilir</span><span><i class="king-safe"></i>5 yok</span><span><i class="king-near"></i>Bilinen 5’e komşu</span></div>
+          <div class="king-note-controls">
+            <div class="king-control-heading"><h3 data-notebook="king-note-cell">Kare seç</h3><button class="outline" data-notebook="king-clear" type="button" disabled>Kareyi temizle</button></div>
+            <div data-notebook="king-palette" class="king-palette" role="group" aria-label="Açılan kartı kaydet"></div>
+            <div class="king-clues" role="group" aria-label="Komşu 5 ipucu">
+              <button class="outline" data-king-clue="yes" type="button" aria-pressed="false">Yakında 5 var</button>
+              <button class="outline" data-king-clue="no" type="button" aria-pressed="false">Yakında 5 yok</button>
+            </div>
+            <p data-notebook="king-note-status" class="muted king-note-status" role="status"></p>
+          </div>
+  </template>
+</body>
+</html>
